@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WBC00MFX59"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WBC00MFX59');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cera Seramik Tozu - Modern sanatçılar için yüksek performanslı döküm malzemesi. Ultra dayanıklı, sıvı itici, boya dostu ve sıfır zımpara gerektiren premium kalite.">
+    <meta name="keywords" content="seramik tozu, döküm malzemesi, sanat malzemesi, kalıp dökümü, seramik">
+    <meta name="author" content="Cera Seramik Tozu">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ceraseramiktozu.com/">
+    <meta property="og:title" content="CERA SERAMİK TOZU | Sanatın En Kaliteli Hali">
+    <meta property="og:description" content="Modern sanatçılar için yüksek performanslı döküm malzemesi. Ultra dayanıklı, sıvı itici, boya dostu ve sıfır zımpara gerektiren premium kalite.">
+    <meta property="og:image" content="cera/logo.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ceraseramiktozu.com/">
+    <meta property="twitter:title" content="CERA SERAMİK TOZU | Sanatın En Kaliteli Hali">
+    <meta property="twitter:description" content="Modern sanatçılar için yüksek performanslı döküm malzemesi.">
+    <meta property="twitter:image" content="cera/logo.jpg">
+    <title>CERA SERAMİK TOZU | Sanatın En Kaliteli Hali</title>
+    <link rel="icon" type="image/jpeg" href="cera/son.jpg">
+    <link rel="canonical" href="https://ceraseramiktozu.com/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c6a87c;
+            --gold-light: #e8d5b0;
+            --gold-dark: #8a6c42;
+            --black: #050505;
+            --surface: #0d0d0d;
+            --surface-2: #141414;
+            --border: rgba(198,168,124,0.15);
+            --border-hover: rgba(198,168,124,0.45);
+            --text: #f0ece4;
+            --text-muted: #888;
+            --gold-grad: linear-gradient(135deg, #bf953f 0%, #fcf6ba 40%, #b38728 70%, #aa771c 100%);
+            --transition-base: 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+            --soft-curve: cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        #page-transition-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: #0a0a0a;
+            z-index: 99999;
+            pointer-events: none;
+            opacity: 1;
+            visibility: visible;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 36px;
+            transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+                        visibility 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        body.is-loaded #page-transition-overlay {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .overlay-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 40%, #b38728 70%, #aa771c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.85;
+            animation: overlayLabelPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes overlayLabelPulse {
+            0%, 100% { opacity: 0.5; }
+            50%       { opacity: 1; }
+        }
+
+        .overlay-dots {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .overlay-dot {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728);
+            box-shadow: 0 0 12px rgba(198,168,124,0.45);
+            animation: overlayWave 1.4s ease-in-out infinite;
+        }
+
+        .overlay-dot:nth-child(1) { animation-delay: 0s; }
+        .overlay-dot:nth-child(2) { animation-delay: 0.18s; }
+        .overlay-dot:nth-child(3) { animation-delay: 0.36s; }
+        .overlay-dot:nth-child(4) { animation-delay: 0.54s; }
+
+        @keyframes overlayWave {
+            0%, 100% { transform: translateY(0)   scale(1);    opacity: 0.5; }
+            40%       { transform: translateY(-14px) scale(1.2); opacity: 1;   }
+            60%       { transform: translateY(-8px)  scale(1.1); opacity: 0.85;}
+        }
+
+        main {
+            opacity: 0;
+            transform: translateY(20px);
+            filter: blur(5px);
+            transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                        filter 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        body.is-loaded main {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        #intro-container {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: var(--black);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .text-stage {
+            overflow: hidden;
+            height: 150px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #intro-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            color: var(--gold);
+            letter-spacing: 15px;
+            opacity: 0;
+            transform: translateY(100%);
+            filter: blur(15px);
+            transition: transform 1.6s var(--soft-curve), opacity 1.6s var(--soft-curve), filter 2s var(--soft-curve);
+        }
+        #intro-text.visible { opacity: 1; transform: translateY(0%); filter: blur(0px); }
+        #intro-text.exit    { opacity: 0; transform: translateY(-100%); filter: blur(15px); }
+
+        #intro-curtain {
+            position: fixed;
+            inset: 0;
+            background: #0a0a0a;
+            z-index: 9999;
+            transform: scaleY(1);
+            transition: transform 2s var(--soft-curve);
+            transform-origin: top;
+        }
+        body.loaded #intro-curtain { transform: scaleY(0); }
+        body.loaded #intro-container { pointer-events: none; opacity: 0; transition: opacity 1s; }
+
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+        }
+        body {
+            background: var(--black);
+            color: var(--text);
+            font-family: 'Manrope', sans-serif;
+            font-weight: 300;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+        }
+        input, textarea, button, [contenteditable] { -webkit-user-select: text; user-select: text; }
+        *:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: var(--gold);
+            color: var(--black);
+            padding: 12px 24px;
+            text-decoration: none;
+            z-index: 10001;
+            font-weight: 600;
+        }
+        .skip-link:focus { top: 0; }
+        body::before {
+            content: "";
+            position: fixed; inset: 0;
+            background: linear-gradient(rgba(5,5,5,0.88), rgba(5,5,5,0.94)), url('cera/foto15.jpg') center/cover no-repeat;
+            z-index: -2;
+        }
+        body::after {
+            content: "";
+            position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .gold-text {
+            background: var(--gold-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav {
+            position: fixed; 
+            top: 0; 
+            width: 100%;
+            padding: 0 5%;
+            height: 80px;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            z-index: 1000;
+            background: rgba(5,5,5,0.92);
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        nav.scrolled { 
+            background: rgba(5,5,5,0.98);
+            height: 70px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+        .brand-logo-img { 
+            height: 60px; 
+            width: auto; 
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 10px rgba(198,168,124,0.2));
+        }
+        nav.scrolled .brand-logo-img { height: 50px; }
+        .nav-links { display: flex; gap: 40px; align-items: center; }
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 1px;
+            background: var(--gold-grad);
+            transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::before { width: 100%; }
+        .nav-phone {
+            display: flex; align-items: center; gap: 12px;
+            text-decoration: none;
+            font-size: 1rem; font-weight: 500; letter-spacing: 0.5px;
+            color: var(--gold);
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            background: rgba(198,168,124,0.05);
+            margin-left: 20px;
+        }
+        .nav-phone:hover { 
+            background: rgba(198,168,124,0.15);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(198,168,124,0.2);
+        }
+        .nav-phone i { font-size: 1rem; animation: phoneRing 2s infinite ease-in-out; }
+        @keyframes phoneRing {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            5% { transform: rotate(-25deg) scale(1.1); }
+            10% { transform: rotate(25deg) scale(1.15); }
+            15% { transform: rotate(-25deg) scale(1.1); }
+            20% { transform: rotate(25deg) scale(1.15); }
+            25% { transform: rotate(-25deg) scale(1.1); }
+            30% { transform: rotate(25deg) scale(1.15); }
+            35% { transform: rotate(-15deg) scale(1.05); }
+            40% { transform: rotate(15deg) scale(1.05); }
+            45% { transform: rotate(0deg) scale(1); }
+            50%, 95% { transform: rotate(0deg) scale(1); }
+        }
+        .hamburger {
+            display: none; flex-direction: column; gap: 5px;
+            cursor: pointer; padding: 10px; z-index: 1001;
+            background: none; border: none;
+        }
+        .hamburger span {
+            display: block; width: 25px; height: 2px;
+            background: var(--gold); transition: all 0.3s ease; border-radius: 2px;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+        .mobile-menu {
+            position: fixed; top: 0; right: -100%;
+            width: 100%; max-width: 300px; height: 100vh;
+            background: rgba(5,5,5,0.98);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            z-index: 999; padding: 100px 30px 30px;
+            transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            border-left: 1px solid var(--border);
+        }
+        .mobile-menu.active { right: 0; }
+        .mobile-menu-links { display: flex; flex-direction: column; gap: 25px; }
+        .mobile-menu-links a {
+            color: var(--text); text-decoration: none;
+            font-size: 1rem; font-weight: 400; letter-spacing: 2px; text-transform: uppercase;
+            padding: 12px 0; border-bottom: 1px solid var(--border); transition: all 0.3s ease;
+        }
+        .mobile-menu-links a:hover { color: var(--gold); padding-left: 10px; }
+        .mobile-menu-phone { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border); }
+        .mobile-menu-phone a {
+            display: flex; align-items: center; gap: 12px;
+            color: var(--gold); text-decoration: none;
+            font-size: 1.1rem; font-weight: 500; padding: 15px;
+            border: 1px solid var(--border); border-radius: 40px;
+            background: rgba(198,168,124,0.05); justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .mobile-menu-phone a:hover { background: rgba(198,168,124,0.15); border-color: var(--gold); }
+        .mobile-menu-phone i { animation: phoneRing 3s infinite ease-in-out; transform-origin: center; }
+        @media (max-width: 768px) {
+            nav { height: 70px; padding: 0 4%; }
+            .brand-logo-img { height: 45px; }
+            nav.scrolled .brand-logo-img { height: 40px; }
+            .nav-links, .nav-phone { display: none; }
+            .hamburger { display: flex; }
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; padding: 100px 5% 80px; position: relative;
+        }
+        .hero-eyebrow {
+            font-size: 0.72rem; letter-spacing: 8px; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 28px;
+            opacity: 0; animation: fadeUp 1s 0.3s forwards;
+            text-shadow: 0 0 20px rgba(198,168,124,0.3);
+        }
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 10vw, 7rem); font-weight: 300;
+            line-height: 1.05; letter-spacing: -0.02em;
+            opacity: 0; animation: fadeUp 1s 0.5s forwards;
+            text-shadow: 0 0 40px rgba(198,168,124,0.2);
+        }
+        .hero-sub {
+            margin-top: 28px; font-size: 0.82rem; letter-spacing: 5px;
+            text-transform: uppercase; color: var(--text-muted);
+            opacity: 0; animation: fadeUp 1s 0.75s forwards;
+        }
+        .hero-divider {
+            width: 60px; height: 1px; background: var(--gold-grad);
+            margin: 40px auto 0; opacity: 0; animation: fadeUp 1s 1s forwards;
+        }
+        .hero-scroll-hint {
+            position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+            opacity: 0; animation: fadeUp 1s 1.4s forwards;
+        }
+        .hero-scroll-hint span {
+            font-size: 0.68rem; letter-spacing: 4px; color: var(--text-muted);
+            text-transform: uppercase; text-align: center;
+        }
+        .scroll-line {
+            width: 1px; height: 50px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            animation: scrollPulse 2s infinite;
+        }
+        .description-section { padding: 80px 5% 100px; }
+        .section-label {
+            font-size: 0.68rem; letter-spacing: 6px; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 20px; text-align: center;
+        }
+        .gold-border-box {
+            padding: 70px 50px; max-width: 1200px; margin: 0 auto;
+            background: rgba(255,255,255,0.015);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 0 rgba(198,168,124,0.12) inset, 0 40px 80px rgba(0,0,0,0.5);
+            position: relative; overflow: hidden;
+        }
+        .gold-border-box::before, .gold-border-box::after {
+            content: ""; position: absolute;
+            width: 60px; height: 60px;
+            border-color: var(--gold); border-style: solid; pointer-events: none;
+        }
+        .gold-border-box::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+        .gold-border-box::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 300;
+            text-align: center; margin-bottom: 40px; line-height: 1.15;
+        }
+        .desc-main-text {
+            font-size: 1.1rem; line-height: 2; color: #ccc;
+            text-align: center; margin: 0 auto 60px; max-width: 820px;
+        }
+        .desc-main-text b { color: var(--text); font-weight: 500; }
+        .features-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 1px; background: var(--border); border: 1px solid var(--border);
+        }
+        .feature-item {
+            padding: 45px 25px; background: var(--black); text-align: center;
+            cursor: pointer; transition: all var(--transition-base);
+            position: relative; overflow: hidden;
+        }
+        .feature-item::before {
+            content: ""; position: absolute; bottom: 0; left: 0;
+            width: 100%; height: 2px; background: var(--gold-grad);
+            transform: scaleX(0); transform-origin: left; transition: transform var(--transition-base);
+        }
+        .feature-item:hover { background: var(--surface-2); transform: translateY(-5px); }
+        .feature-item:hover::before { transform: scaleX(1); }
+        .feature-item i {
+            font-size: 2.2rem; color: var(--gold); margin-bottom: 22px; display: block;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .feature-item:hover i { transform: translateY(-8px) scale(1.15); }
+        .feature-item h3 {
+            font-size: 1rem; font-weight: 600; letter-spacing: 1px;
+            text-transform: uppercase; margin-bottom: 12px;
+        }
+        .feature-item p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.7; }
+        .video-section { padding: 0 5% 100px; }
+        .video-wrapper {
+            position: relative; width: 100%; max-width: 900px; margin: 0 auto;
+            aspect-ratio: 16 / 9; background: #000;
+            border: 1px solid var(--border); overflow: hidden; border-radius: 4px;
+        }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .video-overlay {
+            position: absolute; inset: 0; background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            display: flex; justify-content: center; align-items: center;
+            cursor: pointer; transition: all 0.4s ease; z-index: 10;
+        }
+        .video-overlay:hover { background: rgba(0,0,0,0.6); }
+        .video-overlay.hidden { opacity: 0; pointer-events: none; }
+        .play-button {
+            width: 100px; height: 100px; border-radius: 50%; background: var(--gold-grad);
+            display: flex; justify-content: center; align-items: center;
+            transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+            box-shadow: 0 10px 40px rgba(198,168,124,0.3);
+        }
+        .video-overlay:hover .play-button { transform: scale(1.15); box-shadow: 0 15px 50px rgba(198,168,124,0.5); }
+        .play-button i { font-size: 2.5rem; color: #000; margin-left: 8px; }
+
+        /* =============================================
+           KARIŞIM HESAPLAYICI WIDGET
+           ============================================= */
+        .calculator-section {
+            padding: 0 5% 100px;
+        }
+
+        .calculator-box {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 50px;
+            background: rgba(255,255,255,0.015);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 0 rgba(198,168,124,0.12) inset, 0 40px 80px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .calculator-box::before, .calculator-box::after {
+            content: ""; position: absolute;
+            width: 60px; height: 60px;
+            border-color: var(--gold); border-style: solid; pointer-events: none;
+        }
+        .calculator-box::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+        .calculator-box::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+        /* Dekoratif arka plan efekti */
+        .calculator-box .calc-bg-glow {
+            position: absolute;
+            width: 400px; height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(198,168,124,0.04) 0%, transparent 70%);
+            top: -100px; right: -100px;
+            pointer-events: none;
+        }
+
+        .calc-header { text-align: center; margin-bottom: 48px; }
+        .calc-header .calc-icon {
+            width: 64px; height: 64px;
+            background: rgba(198,168,124,0.08);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.6rem; color: var(--gold);
+        }
+
+        .calc-input-area {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: end;
+            margin-bottom: 36px;
+        }
+
+        @media (max-width: 640px) {
+            .calc-input-area { grid-template-columns: 1fr; }
+            .calc-separator { display: none; }
+        }
+
+        .calc-field { display: flex; flex-direction: column; gap: 10px; }
+        .calc-field label {
+            font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase;
+            color: var(--gold); font-weight: 500;
+        }
+
+        .calc-input-wrapper {
+            position: relative;
+        }
+        .calc-input-wrapper input[type="number"] {
+            width: 100%;
+            padding: 18px 60px 18px 20px;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text);
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            -moz-appearance: textfield;
+        }
+        .calc-input-wrapper input[type="number"]::-webkit-inner-spin-button,
+        .calc-input-wrapper input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; }
+        .calc-input-wrapper input[type="number"]:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(198,168,124,0.08), 0 0 20px rgba(198,168,124,0.1);
+        }
+        .calc-input-wrapper .input-unit {
+            position: absolute;
+            right: 18px; top: 50%; transform: translateY(-50%);
+            font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--text-muted); font-weight: 500; pointer-events: none;
+        }
+
+        .calc-separator {
+            display: flex; align-items: center; justify-content: center;
+            padding-bottom: 18px;
+        }
+        .calc-separator-line {
+            width: 1px; height: 40px;
+            background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+        }
+
+        /* Oran seçici */
+        .ratio-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .ratio-selector-label {
+            width: 100%;
+            text-align: center;
+            font-size: 0.65rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+        .ratio-btn {
+            padding: 10px 22px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            color: var(--text-muted);
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .ratio-btn:hover {
+            border-color: var(--border-hover);
+            color: var(--gold);
+        }
+        .ratio-btn.active {
+            background: rgba(198,168,124,0.1);
+            border-color: var(--gold);
+            color: var(--gold);
+            box-shadow: 0 0 15px rgba(198,168,124,0.12);
+        }
+        .ratio-btn .ratio-desc {
+            display: block;
+            font-size: 0.6rem;
+            letter-spacing: 0.5px;
+            opacity: 0.6;
+            margin-top: 2px;
+        }
+
+        /* Sonuç kartları */
+        .calc-results {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+        @media (max-width: 480px) { .calc-results { grid-template-columns: 1fr; } }
+
+        .result-card {
+            padding: 30px 24px;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .result-card:hover { transform: translateY(-3px); }
+
+        .result-card.powder-card {
+            background: linear-gradient(135deg, rgba(198,168,124,0.07) 0%, rgba(198,168,124,0.02) 100%);
+            border: 1px solid rgba(198,168,124,0.25);
+        }
+        .result-card.water-card {
+            background: linear-gradient(135deg, rgba(100,160,220,0.07) 0%, rgba(100,160,220,0.02) 100%);
+            border: 1px solid rgba(100,160,220,0.2);
+        }
+
+        .result-card .result-icon {
+            font-size: 1.4rem;
+            margin-bottom: 14px;
+            display: block;
+        }
+        .powder-card .result-icon { color: var(--gold); }
+        .water-card .result-icon { color: #7eb8e0; }
+
+        .result-card .result-label {
+            font-size: 0.65rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: block;
+        }
+        .result-card .result-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 300;
+            line-height: 1;
+            display: block;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .powder-card .result-value {
+            background: var(--gold-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .water-card .result-value { color: #7eb8e0; }
+
+        .result-card .result-unit {
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 6px;
+            display: block;
+        }
+
+        /* Animasyonlu sayaç efekti */
+        @keyframes valuePopIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            60% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .result-value.animate { animation: valuePopIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+        /* Görsel oran çubuğu */
+        .ratio-bar-wrapper {
+            padding: 24px 0 10px;
+            border-top: 1px solid var(--border);
+        }
+        .ratio-bar-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .ratio-bar-labels span {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .ratio-bar-labels .lbl-powder { color: var(--gold); }
+        .ratio-bar-labels .lbl-water { color: #7eb8e0; }
+
+        .ratio-bar {
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.05);
+            overflow: hidden;
+            position: relative;
+        }
+        .ratio-bar-fill-powder {
+            position: absolute; left: 0; top: 0; bottom: 0;
+            background: var(--gold-grad);
+            border-radius: 3px;
+            transition: width 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .ratio-bar-fill-water {
+            position: absolute; right: 0; top: 0; bottom: 0;
+            background: linear-gradient(to right, #5a9ec7, #7eb8e0);
+            border-radius: 3px;
+            transition: width 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* Uyarı notu */
+        .calc-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: rgba(198,168,124,0.04);
+            border-left: 2px solid rgba(198,168,124,0.3);
+            border-radius: 0 4px 4px 0;
+        }
+        .calc-note i { color: var(--gold); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
+        .calc-note p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
+        .calc-note p strong { color: var(--text); font-weight: 500; }
+
+        /* Boş durum */
+        .calc-empty-state {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-style: italic;
+            letter-spacing: 1px;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        .calc-empty-state.hidden { display: none; }
+        .calc-results-wrap { transition: opacity 0.3s; }
+        .calc-results-wrap.hidden { display: none; }
+
+        /* =============================================
+           SONRASI (mevcut stiller devam)
+           ============================================= */
+        .testimonials-section { padding: 90px 0; overflow: hidden; }
+        .testimonial-header {
+            padding: 0 5%; margin-bottom: 50px;
+            display: flex; justify-content: space-between; align-items: flex-end;
+        }
+        .testimonial-count { font-size: 0.72rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-muted); }
+        .testimonial-slider {
+            display: flex; gap: 20px; overflow-x: auto; padding: 10px 5% 40px;
+            scroll-snap-type: x mandatory; scrollbar-width: thin;
+            scrollbar-color: var(--gold-dark) var(--surface);
+        }
+        .testimonial-slider::-webkit-scrollbar { height: 2px; }
+        .testimonial-slider::-webkit-scrollbar-track { background: var(--surface); }
+        .testimonial-slider::-webkit-scrollbar-thumb { background: var(--gold); }
+        .testimonial-card {
+            min-width: 300px; max-width: 300px; min-height: 420px; padding: 25px;
+            background: var(--surface); border: 1px solid var(--border);
+            scroll-snap-align: start; transition: all 0.4s; flex-shrink: 0;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .testimonial-card:hover { border-color: var(--border-hover); transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .stars { color: var(--gold); font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 16px; }
+        .quote-text {
+            font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; font-style: italic;
+            color: #ddd; line-height: 1.65; margin-bottom: 15px; min-height: 90px; flex-grow: 1;
+        }
+        .customer-name { font-size: 0.78rem; font-weight: 600; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; }
+        .customer-img {
+            width: 100%; height: 200px; object-fit: cover; margin-top: 15px;
+            border: 1px solid var(--border); filter: grayscale(30%); transition: all 0.4s; border-radius: 2px;
+        }
+        .testimonial-card:hover .customer-img { filter: grayscale(0%); }
+        .gallery-section { position: relative; padding-bottom: 100px; }
+        .gallery-label { text-align: center; padding: 60px 5% 40px; }
+        #galleryScrollContainer { display: block; }
+        #mobileGalleryContainer { display: none; }
+        @media (max-width: 768px) {
+            #galleryScrollContainer { display: none; }
+            #mobileGalleryContainer { display: block; padding: 20px 0 40px; }
+            .mobile-gallery-track {
+                display: flex; gap: 15px; overflow-x: auto; scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch; padding: 0 20px; scrollbar-width: none;
+            }
+            .mobile-gallery-track::-webkit-scrollbar { display: none; }
+            .mobile-gallery-card {
+                flex-shrink: 0; width: 70vw; max-width: 300px;
+                height: 70vw; max-height: 300px; scroll-snap-align: center;
+                position: relative; border-radius: 12px; overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.4); transition: transform 0.3s ease;
+            }
+            .mobile-gallery-card img { width: 100%; height: 100%; object-fit: cover; }
+            .mobile-gallery-card .image-counter {
+                position: absolute; bottom: 15px; left: 15px;
+                background: rgba(0,0,0,0.7); color: white; padding: 6px 12px;
+                border-radius: 6px; font-size: 12px; font-weight: bold;
+            }
+            .mobile-scroll-hint {
+                display: flex; justify-content: center; align-items: center; gap: 8px;
+                margin-top: 20px; color: var(--gold); font-size: 0.7rem;
+                letter-spacing: 3px; text-transform: uppercase;
+                animation: mobileHintPulse 2s ease-in-out infinite;
+            }
+            @keyframes mobileHintPulse {
+                0%, 100% { opacity: 0.5; transform: translateX(0); }
+                50% { opacity: 1; transform: translateX(5px); }
+            }
+        }
+        .contact-section { padding: 90px 5%; }
+        .contact-inner { max-width: 700px; margin: 0 auto; }
+        .contact-form { background: var(--surface); padding: 50px; border: 1px solid var(--border); position: relative; }
+        .contact-form::before, .contact-form::after {
+            content: ""; position: absolute; width: 50px; height: 50px;
+            border-color: var(--gold); border-style: solid; pointer-events: none;
+        }
+        .contact-form::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+        .contact-form::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+        .form-group { margin-bottom: 18px; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 16px 18px;
+            background: rgba(0,0,0,0.6); border: 1px solid var(--border);
+            color: var(--text); font-family: 'Manrope', sans-serif;
+            font-size: 0.9rem; outline: none; transition: all 0.35s; border-radius: 2px;
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 20px rgba(198,168,124,0.15); }
+        .form-group textarea { resize: vertical; min-height: 110px; }
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+        }
+        .submit-btn {
+            width: 100%; padding: 18px; background: transparent; border: 1px solid var(--gold);
+            color: var(--gold); font-family: 'Manrope', sans-serif;
+            font-size: 0.78rem; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
+            cursor: pointer; transition: all var(--transition-base); position: relative; overflow: hidden; border-radius: 2px;
+        }
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        .submit-btn::before {
+            content: ""; position: absolute; inset: 0; background: var(--gold-grad);
+            transform: translateY(101%); transition: transform var(--transition-base);
+        }
+        .submit-btn:hover:not(:disabled)::before { transform: translateY(0); }
+        .submit-btn:hover:not(:disabled) { color: #000; }
+        .submit-btn span { position: relative; z-index: 1; }
+        .submit-btn .spinner { display: none; position: relative; z-index: 1; }
+        .submit-btn.loading .spinner { display: inline-block; }
+        .submit-btn.loading span { display: none; }
+        #successMsg { display: none; text-align: center; margin-top: 20px; color: #4ade80; font-size: 0.88rem; letter-spacing: 2px; text-transform: uppercase; }
+        #errorMsg { display: none; text-align: center; margin-top: 20px; color: #ef4444; font-size: 0.88rem; letter-spacing: 2px; text-transform: uppercase; }
+        .info-footer { padding: 80px 5% 60px; background: var(--surface); border-top: 1px solid var(--border); }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; }
+        .footer-box { flex: 1; min-width: 220px; }
+        .footer-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+        .footer-link { color: var(--text-muted); text-decoration: none; display: block; margin-bottom: 14px; font-size: 0.88rem; letter-spacing: 0.3px; transition: all 0.3s; }
+        .footer-link:hover { color: var(--gold); padding-left: 8px; transform: translateX(5px); }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; color: var(--text-muted); font-size: 0.88rem; }
+        .footer-contact-item i { color: var(--gold); width: 16px; margin-top: 2px; font-size: 0.85rem; }
+        .social-icons { display: flex; gap: 30px; margin-top: 20px; }
+        .social-icons a { color: var(--gold); font-size: 1.8rem; transition: all 0.4s; text-decoration: none; }
+        .social-icons a:hover { opacity: 0.8; transform: translateY(-5px) scale(1.1); }
+        .footer-bottom {
+            max-width: 1200px; margin: 50px auto 0; padding-top: 24px; border-top: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.5px;
+        }
+        .wa-float {
+            position: fixed; bottom: 28px; right: 28px; background: #25D366; color: #fff;
+            padding: 15px 25px; border-radius: 50px; text-decoration: none; z-index: 9999;
+            display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 0.95rem;
+            box-shadow: 0 6px 24px rgba(37,211,102,0.35); transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .wa-float:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 35px rgba(37,211,102,0.5); background: #22c15e; }
+        .wa-float i { font-size: 1.3rem; }
+        .reveal, .info-box {
+            opacity: 0; transform: translateY(32px);
+            transition: opacity 1.6s var(--transition-base), transform 1.6s var(--transition-base);
+        }
+        .reveal.active, .info-box.active { opacity: 1; transform: translateY(0); }
+        .info-box {
+            opacity: 0; transform: translateY(50px) scale(0.95); filter: blur(15px) brightness(0.6);
+            transition: opacity 1.2s cubic-bezier(0.2,1,0.3,1), transform 1.2s cubic-bezier(0.2,1,0.3,1), filter 1.5s ease-out;
+        }
+        .info-box.active { opacity: 1; transform: translateY(0) scale(1); filter: blur(0) brightness(1); }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+            50% { opacity: 0.4; transform: scaleY(0.6); transform-origin: top; }
+        }
+        @media (max-width: 992px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) {
+            .play-button { width: 80px; height: 80px; }
+            .play-button i { font-size: 2rem; }
+            .calculator-box { padding: 40px 24px; }
+        }
+        @media (max-width: 640px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .gold-border-box { padding: 40px 24px; }
+            .contact-form { padding: 36px 24px; }
+            .testimonial-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="page-transition-overlay" aria-hidden="true">
+        <span class="overlay-label">Yükleniyor</span>
+        <div class="overlay-dots">
+            <div class="overlay-dot"></div>
+            <div class="overlay-dot"></div>
+            <div class="overlay-dot"></div>
+            <div class="overlay-dot"></div>
+        </div>
+    </div>
+
+    <a href="#main-content" class="skip-link">Ana İçeriğe Geç</a>
+
+    <div id="intro-container">
+        <div class="text-stage">
+            <div id="intro-text"></div>
+        </div>
+    </div>
+    <div id="intro-curtain"></div>
+
+    <nav id="mainNav" role="navigation" aria-label="Ana navigasyon">
+        <div class="logo-container">
+            <a href="index.html" aria-label="Cera Seramik Tozu Ana Sayfa">
+                <img src="cera/logo3.png" alt="Cera Seramik Tozu Logo" class="brand-logo-img" width="60" height="60">
+            </a>
+        </div>
+        <div style="display: flex; align-items: center;">
+            <div class="nav-links">
+                <a href="index.html">Anasayfa</a>
+                <a href="nasıl-kullanilir.html">Nasıl Kullanılır</a>
+                <a href="sss.html">SSS</a>
+                <a href="biz-kimiz.html">Biz Kimiz</a>
+                <a href="urunlerimiz.html">Ürünlerimiz</a>
+            </div>
+            <a href="tel:05303107320" class="nav-phone" aria-label="Telefon: 0530 310 73 20">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>0530 310 73 20</span>
+            </a>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menüyü aç/kapat" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-links">
+            <a href="index.html">Anasayfa</a>
+            <a href="nasıl-kullanilir.html">Nasıl Kullanılır</a>
+            <a href="sss.html">SSS</a>
+            <a href="biz-kimiz.html">Biz Kimiz</a>
+            <a href="urunlerimiz.html">Ürünlerimiz</a>
+        </div>
+        <div class="mobile-menu-phone">
+            <a href="tel:05303107320" aria-label="Telefon: 0530 310 73 20">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>0530 310 73 20</span>
+            </a>
+        </div>
+    </div>
+
+    <main>
+
+        <section class="hero" id="main-content">
+            <p class="hero-eyebrow">Döküm Malzemesi</p>
+            <h1 class="gold-text">CERA<br>SERAMİK TOZU</h1>
+            <p class="hero-sub">Sanatın En Kaliteli Hali</p>
+            <div class="hero-divider" aria-hidden="true"></div>
+            <div class="hero-scroll-hint" aria-hidden="true"></div>
+        </section>
+
+        <section class="description-section">
+            <div class="gold-border-box reveal info-box">
+                <p class="section-label">Ürün Hakkında</p>
+                <h2 class="section-title gold-text">Cera Seramik Tozu Nedir?</h2>
+                <p class="desc-main-text">
+                    Cera, modern sanatçılar ve hobi tutkunları için geliştirilmiş
+                    <b>yüksek performanslı bir döküm malzemesidir.</b>
+                    Üstün akışkanlık teknolojisi sayesinde silikon kalıpların en ince detaylarına kadar yayılır
+                    ve hava kabarcığı oluşumunu minimize eder. Kalıptan çıktığı an mermer pürüzsüzlüğünde
+                    bir yüzey sunarak ek işçiliği ortadan kaldırır.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-item reveal info-box">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3 class="gold-text">Ultra Dayanıklı</h3>
+                        <p>Polimer takviyeli yapısı ile darbelere karşı beton kadar sert, mermer kadar asildir.</p>
+                    </div>
+                    <div class="feature-item reveal info-box" style="transition-delay:0.1s">
+                        <i class="fas fa-tint-slash"></i>
+                        <h3 class="gold-text">Sıvı İtici</h3>
+                        <p>Gözeneksiz yapısı sayesinde nemden etkilenmez, dış mekan objeleri için idealdir.</p>
+                    </div>
+                    <div class="feature-item reveal info-box" style="transition-delay:0.2s">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3 class="gold-text">Boya Dostu</h3>
+                        <p>Boya pigmentlerini yüzeyde kusursuz tutar, renklerin çok daha canlı görünmesini sağlar.</p>
+                    </div>
+                    <div class="feature-item reveal info-box" style="transition-delay:0.3s">
+                        <i class="fas fa-magic"></i>
+                        <h3 class="gold-text">Sıfır Zımpara</h3>
+                        <p>Özel formülü sayesinde döküm sonrası pürüzsüzdür; yorgunluğa son verir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <div class="gold-border-box reveal info-box">
+                <p class="section-label">Nasıl Yapılır?</p>
+                <h2 class="section-title gold-text">Kullanım Videosu</h2>
+                <div class="video-wrapper">
+                    <iframe id="ceraVideo" width="100%" height="100%" src="https://www.youtube.com/embed/E-LTIfIXu98?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Cera Seramik Tozu Kullanım Videosu" loading="lazy"></iframe>
+                    <div id="videoOverlay" class="video-overlay" role="button" tabindex="0" aria-label="Videoyu oynat">
+                        <div class="play-button"><i class="fas fa-play" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             DİNAMİK KARIŞIM HESAPLAYICI
+             ============================================ -->
+        <section class="calculator-section" aria-label="Karışım hesaplayıcı">
+            <div class="calculator-box reveal info-box">
+                <div class="calc-bg-glow" aria-hidden="true"></div>
+
+                <div class="calc-header">
+                    <div class="calc-icon" aria-hidden="true">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <p class="section-label" style="margin-bottom:12px;">Araç</p>
+                    <h2 class="section-title gold-text" style="margin-bottom:14px;">Karışım Hesaplayıcı</h2>
+                    <p style="font-size:0.85rem; color:var(--text-muted); max-width:480px; margin:0 auto; line-height:1.7;">
+                        Kalıbınızın kapasitesini girin, ne kadar Cera Tozu ve Su kullanmanız gerektiğini anında öğrenin.
+                    </p>
+                </div>
+
+                <!-- Oran Seçici -->
+                <div style="margin-bottom:28px;">
+                    <p class="ratio-selector-label">Karışım Oranı Seçin</p>
+                    <div class="ratio-selector">
+                        <button class="ratio-btn active" data-water-per-kg="250" aria-pressed="true">
+                            KARIŞTIRICI İLE
+                            <span class="ratio-desc">1 kg → 250 ml su</span>
+                        </button>
+                        <button class="ratio-btn" data-water-per-kg="300" aria-pressed="false">
+                            EL İLE
+                            <span class="ratio-desc">1 kg → 300 ml su</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Giriş Alanı -->
+                <div class="calc-input-area">
+                    <div class="calc-field">
+                        <label for="moldWeight">Kalıp Kapasitesi</label>
+                        <div class="calc-input-wrapper">
+                            <input
+                                type="number"
+                                id="moldWeight"
+                                min="1"
+                                max="99999"
+                                step="1"
+                                placeholder="örn. 300"
+                                autocomplete="off"
+                                aria-label="Kalıp kapasitesi gram cinsinden"
+                            >
+                            <span class="input-unit">gram</span>
+                        </div>
+                    </div>
+                    <div class="calc-separator" aria-hidden="true">
+                        <div class="calc-separator-line"></div>
+                    </div>
+                    <div class="calc-field">
+                        <label style="color:var(--text-muted);">Hesaplama Anında Yapılır</label>
+                        <div style="padding: 18px 20px; background: rgba(198,168,124,0.03); border: 1px dashed rgba(198,168,124,0.15); border-radius:4px; font-size:0.78rem; color:var(--text-muted); line-height:1.6;">
+                            Toplam döküm ağırlığını (gram) girin. Sonuçlar seçtiğiniz orana göre otomatik hesaplanır.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boş Durum -->
+                <div class="calc-empty-state" id="calcEmptyState">
+                    <i class="fas fa-arrow-up" style="margin-bottom:10px; display:block; font-size:1.2rem; color:var(--gold); opacity:0.4;"></i>
+                    Kalıp kapasitesini girerek hesaplamayı başlatın.
+                </div>
+
+                <!-- Sonuçlar -->
+                <div class="calc-results-wrap hidden" id="calcResultsWrap">
+                    <div class="calc-results">
+                        <div class="result-card powder-card">
+                            <i class="fas fa-mortar-pestle result-icon" aria-hidden="true"></i>
+                            <span class="result-label">Cera Seramik Tozu</span>
+                            <span class="result-value" id="resultPowder">—</span>
+                            <span class="result-unit">gram</span>
+                        </div>
+                        <div class="result-card water-card">
+                            <i class="fas fa-tint result-icon" aria-hidden="true"></i>
+                            <span class="result-label">Su</span>
+                            <span class="result-value" id="resultWater">—</span>
+                            <span class="result-unit">ml &nbsp;≈ gram</span>
+                        </div>
+                    </div>
+
+                    <!-- Görsel Oran Çubuğu -->
+                    <div class="ratio-bar-wrapper">
+                        <div class="ratio-bar-labels">
+                            <span class="lbl-powder">
+                                <i class="fas fa-circle" style="font-size:0.5rem; margin-right:5px;"></i>
+                                Toz: <span id="barPowderPct">—</span>%
+                            </span>
+                            <span class="lbl-water">
+                                Su: <span id="barWaterPct">—</span>%
+                                <i class="fas fa-circle" style="font-size:0.5rem; margin-left:5px;"></i>
+                            </span>
+                        </div>
+                        <div class="ratio-bar" role="meter" aria-label="Toz-Su oranı">
+                            <div class="ratio-bar-fill-powder" id="barPowder" style="width:0%"></div>
+                            <div class="ratio-bar-fill-water" id="barWater" style="width:0%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Not -->
+                <div class="calc-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p>
+                        <strong>İpucu:</strong> Karıştırıcı kullanıyorsanız daha az su yeterlidir — karıştırıcı malzemeyi daha homojen dağıtır. El ile karıştırıyorsanız biraz daha fazla su ekleyerek akışkanlığı artırın, böylece kalıbın tüm detaylarına kolayca ulaşırsınız. Her iki yöntemde de suyu yavaş yavaş ekleyin ve topaklanma kalmayıncaya kadar karıştırın.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+        <!-- ============================================
+             HESAPLAYICI BİTİŞ
+             ============================================ -->
+
+        <section class="testimonials-section">
+            <div class="testimonial-header">
+                <div>
+                    <p class="section-label" style="text-align:left; margin-bottom:10px;">Müşteri Deneyimleri</p>
+                    <h2 class="section-title gold-text" style="text-align:left;">Onlar Anlatsın</h2>
+                </div>
+                <span class="testimonial-count">63+ Değerlendirme</span>
+            </div>
+            <div class="testimonial-slider" role="region" aria-label="Müşteri yorumları">
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="4 yıldız">★★★★☆</div>
+                    <p class="quote-text">İlk kez kullandım çok memnun kaldım. Detaylar net çıktı.</p>
+                    <div class="customer-name">— Selin Y.</div>
+                    <img src="cera/foto1.jpg" class="customer-img" alt="Selin Y. müşteri görseli" loading="lazy">
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="4 yıldız">★★★★☆</div>
+                    <p class="quote-text">Daha önce farklı markalar denemiştim ama Cera'nın kıvamı çok daha iyi. Kabarcık yapmadı, kalıptan çıkarması kolay oldu. Tekrar sipariş vereceğim.</p>
+                    <div class="customer-name">— Ahmet T.</div>
+                    <img src="cera/foto3.jpg" class="customer-img" alt="Ahmet T. müşteri görseli" loading="lazy">
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="4 yıldız">★★★★☆</div>
+                    <p class="quote-text">Detaylı kalıplarda bile çok iyi sonuç verdi. Daha önce kullandıklarımla kıyaslanamaz bile. Fiyat/performans ürünü.</p>
+                    <div class="customer-name">— Merve K.</div>
+                    <img src="cera/foto5.jpg" class="customer-img" alt="Merve K. müşteri görseli" loading="lazy">
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="3 yıldız">★★★☆☆</div>
+                    <p class="quote-text">Atölyemde kullanıyorum, öğrencilerim çok sevdi. Özellikle zımpara gerektirmemesi büyük avantaj.</p>
+                    <div class="customer-name">— Caner B.</div>
+                    <img src="cera/foto8.jpg" class="customer-img" alt="Caner B. müşteri görseli" loading="lazy">
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="5 yıldız">★★★★★</div>
+                    <p class="quote-text">İlk denememde biraz fazla su koydum sanırım, geç kurudu. İkincide ölçüyü tutturunca harika oldu. Biraz pratik istiyor.</p>
+                    <div class="customer-name">— Zeynep S.</div>
+                    <img src="cera/foto11.jpg" class="customer-img" alt="Zeynep S. müşteri görseli" loading="lazy">
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="5 yıldız">★★★★★</div>
+                    <p class="quote-text">Arkadaşım tavsiye etti, birlikte sipariş verdik. İkimiz de çok memnun kaldık. Artık sürekli kullanacağız.</p>
+                    <div class="customer-name">— Murat G.</div>
+                    <img src="cera/foto2.jpg" class="customer-img" alt="Murat G. müşteri görseli" loading="lazy">
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="4 yıldız">★★★★☆</div>
+                    <p class="quote-text">Uzun zamandır seramik işiyle uğraşıyorum. Birçok farklı marka denedim. Cera'nın en beğendiğim yanı, döküm sonrası yüzeyin pürüzsüz çıkması. Normalde saatlerce zımpara yapardım, şimdi direkt boyamaya geçiyorum. Tavsiye ederim.</p>
+                    <div class="customer-name">— Deniz L.</div>
+                    <img src="cera/foto4.jpg" class="customer-img" alt="Deniz L. müşteri görseli" loading="lazy">
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="5 yıldız">★★★★★</div>
+                    <p class="quote-text">Hobi olarak uğraşıyorum, evde minik objeler yapıyorum. Cera sayesinde işlerim çok profesyonel görünmeye başladı. Arkadaşlarım hediye sandı, satın alabileceklerini söylediler. Kargo da hızlıydı, iletişim çok iyiydi. Kesinlikle tavsiye ediyorum.</p>
+                    <div class="customer-name">— Arzu S.</div>
+                    <img src="cera/foto9.jpg" class="customer-img" alt="Arzu S. müşteri görseli" loading="lazy">
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="4 yıldız">★★★★☆</div>
+                    <p class="quote-text">Ürün kaliteli, herkes yazmış zaten. Ben biraz da ambalaja dikkat çekmek istiyorum. Özenle paketlenmişti, kargoda zarar görmemiş. Satıcı da çok ilgiliydi, sorularıma hızlı dönüş yaptı. Tek sorun kargonun biraz geç gelmesiydi ama onun dışında her şey harikaydı.</p>
+                    <div class="customer-name">— Elif S.</div>
+                    <img src="cera/foto6.jpg" class="customer-img" alt="Elif S. müşteri görseli" loading="lazy">
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="5 yıldız">★★★★★</div>
+                    <p class="quote-text">Okulda görsel sanatlar öğretmeniyim. Öğrencilerle birlikte proje yapıyoruz. Cera hem güvenli hem de kullanımı kolay. Maske ve eldivenle çalışıyoruz, hiç sorun yaşamadık. Sonuçlar da harika! Okul olarak toplu sipariş vereceğiz.</p>
+                    <div class="customer-name">— Burak J.</div>
+                    <img src="cera/foto10.jpg" class="customer-img" alt="Burak J. müşteri görseli" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="gallery-label reveal">
+                <p class="section-label">Galeri</p>
+                <h2 class="section-title gold-text">Eserler</h2>
+            </div>
+            
+            <div id="galleryScrollContainer" style="height: 1400vh; position: relative;">
+                <div style="position: sticky; top: 0; height: 100vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: flex-start; background: var(--black);">
+                    <div id="galleryTrack" style="display: flex; gap: 30px; will-change: transform; transition: transform 0.1s ease-out;">
+                        <div class="gallery-slide" data-index="0" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto1.jpg" alt="Cera Seramik Tozu ile yapılmış eser 1" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">1 / 14</div>
+                        </div>
+                        <div class="gallery-slide" data-index="1" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto2.jpg" alt="Cera Seramik Tozu ile yapılmış eser 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">2 / 14</div>
+                        </div>
+                        <div class="gallery-slide" data-index="2" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto3.jpg" alt="Cera Seramik Tozu ile yapılmış eser 3" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">3 / 14</div>
+                        </div>
+                        <div class="gallery-slide" data-index="3" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto4.jpg" alt="Cera Seramik Tozu ile yapılmış eser 4" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">4 / 14</div>
+                        </div>
+                        <div class="gallery-slide" data-index="4" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto5.jpg" alt="Cera Seramik Tozu ile yapılmış eser 5" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">5 / 14</div>
+                        </div>
+                        <div class="gallery-slide" data-index="5" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto6.jpg" alt="Cera Seramik Tozu ile yapılmış eser 6" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">6 / 14</div>
+                        </div>
+                        <div class="gallery-slide" data-index="6" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto7.jpg" alt="Cera Seramik Tozu ile yapılmış eser 7" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">7 / 14</div>
+                        </div>
+                        <div class="gallery-slide" data-index="7" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto8.jpg" alt="Cera Seramik Tozu ile yapılmış eser 8" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">8 / 14</div>
+                        </div>
+                        <div class="gallery-slide" data-index="8" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto9.jpg" alt="Cera Seramik Tozu ile yapılmış eser 9" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">9 / 14</div>
+                        </div>
+                        <div class="gallery-slide" data-index="9" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto10.jpg" alt="Cera Seramik Tozu ile yapılmış eser 10" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">10 / 14</div>
+                        </div>
+                        <div class="gallery-slide" data-index="10" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto11.jpg" alt="Cera Seramik Tozu ile yapılmış eser 11" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">11 / 14</div>
+                        </div>
+                        <div class="gallery-slide" data-index="11" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto12.jpg" alt="Cera Seramik Tozu ile yapılmış eser 12" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">12 / 14</div>
+                        </div>
+                        <div class="gallery-slide" data-index="12" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto13.jpg" alt="Cera Seramik Tozu ile yapılmış eser 13" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">13 / 14</div>
+                        </div>
+                        <div class="gallery-slide" data-index="13" style="flex-shrink: 0; width: 500px; height: 500px; position: relative; display: flex; align-items: center; justify-content: center; background: var(--black);">
+                            <img src="cera/foto14.jpg" alt="Cera Seramik Tozu ile yapılmış eser 14" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: bold;">14 / 14</div>
+                        </div>
+                    </div>
+                    <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); color: var(--gold); font-size: 12px; opacity: 0.6;">↓ Scroll yapın</div>
+                </div>
+            </div>
+
+            <div id="mobileGalleryContainer">
+                <div class="mobile-gallery-track">
+                    <div class="mobile-gallery-card"><img src="cera/foto1.jpg" alt="Cera eser 1" loading="lazy"><div class="image-counter">1 / 14</div></div>
+                    <div class="mobile-gallery-card"><img src="cera/foto2.jpg" alt="Cera eser 2" loading="lazy"><div class="image-counter">2 / 14</div></div>
+                    <div class="mobile-gallery-card"><img src="cera/foto3.jpg" alt="Cera eser 3" loading="lazy"><div class="image-counter">3 / 14</div></div>
+                    <div class="mobile-gallery-card"><img src="cera/foto4.jpg" alt="Cera eser 4" loading="lazy"><div class="image-counter">4 / 14</div></div>
+                    <div class="mobile-gallery-card"><img src="cera/foto5.jpg" alt="Cera eser 5" loading="lazy"><div class="image-counter">5 / 14</div></div>
+                    <div class="mobile-gallery-card"><img src="cera/foto6.jpg" alt="Cera eser 6" loading="lazy"><div class="image-counter">6 / 14</div></div>
+                    <div class="mobile-gallery-card"><img src="cera/foto7.jpg" alt="Cera eser 7" loading="lazy"><div class="image-counter">7 / 14</div></div>
+                    <div class="mobile-gallery-card"><img src="cera/foto8.jpg" alt="Cera eser 8" loading="lazy"><div class="image-counter">8 / 14</div></div>
+                    <div class="mobile-gallery-card"><img src="cera/foto9.jpg" alt="Cera eser 9" loading="lazy"><div class="image-counter">9 / 14</div></div>
+                    <div class="mobile-gallery-card"><img src="cera/foto10.jpg" alt="Cera eser 10" loading="lazy"><div class="image-counter">10 / 14</div></div>
+                    <div class="mobile-gallery-card"><img src="cera/foto11.jpg" alt="Cera eser 11" loading="lazy"><div class="image-counter">11 / 14</div></div>
+                    <div class="mobile-gallery-card"><img src="cera/foto12.jpg" alt="Cera eser 12" loading="lazy"><div class="image-counter">12 / 14</div></div>
+                    <div class="mobile-gallery-card"><img src="cera/foto13.jpg" alt="Cera eser 13" loading="lazy"><div class="image-counter">13 / 14</div></div>
+                    <div class="mobile-gallery-card"><img src="cera/foto14.jpg" alt="Cera eser 14" loading="lazy"><div class="image-counter">14 / 14</div></div>
+                </div>
+                <div class="mobile-scroll-hint">
+                    <i class="fas fa-arrows-alt-h"></i>
+                    <span>Kaydır</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section reveal info-box">
+            <div class="contact-inner">
+                <p class="section-label" style="text-align:center; margin-bottom:12px;">Sipariş Ver</p>
+                <h2 class="section-title gold-text" style="text-align:center; margin-bottom:40px;">Hızlı Sipariş</h2>
+                <div class="contact-form">
+                    <form id="firebaseContactForm" novalidate aria-label="İletişim formu">
+                        <div class="form-group">
+                            <label for="custName" class="sr-only">Ad Soyad</label>
+                            <input type="text" id="custName" name="name" placeholder="Ad Soyad" required autocomplete="name" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="custPhone" class="sr-only">Telefon Numarası</label>
+                            <input type="tel" id="custPhone" name="phone" placeholder="Telefon Numarası" required autocomplete="tel" pattern="[0-9\s\+\-\(\)]+" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="custMsg" class="sr-only">Mesajınız</label>
+                            <textarea id="custMsg" name="message" rows="4" placeholder="Mesajınız (opsiyonel)" autocomplete="off"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" aria-label="Formu gönder">
+                            <span>Mesajı Gönder</span>
+                            <span class="spinner" aria-hidden="true">⏳</span>
+                        </button>
+                    </form>
+                    <p id="successMsg" role="alert" aria-live="polite">✓ Mesajınız alındı, en kısa sürede dönüş yapacağız.</p>
+                    <p id="errorMsg" role="alert" aria-live="assertive"></p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="info-footer">
+            <div class="footer-container">
+                <div class="footer-box">
+                    <h3 class="gold-text">Hızlı Menü</h3>
+                    <a href="index.html" class="footer-link">Anasayfa</a>
+                    <a href="biz-kimiz.html" class="footer-link">Biz Kimiz?</a>
+                    <a href="nasıl-kullanilir.html" class="footer-link">Nasıl Kullanılır?</a>
+                    <a href="sss.html" class="footer-link">Sıkça Sorulan Sorular</a>
+                    <a href="urunlerimiz.html" class="footer-link">Ürünlerimiz</a>
+                </div>
+                <div class="footer-box">
+                    <h3 class="gold-text">İletişim</h3>
+                    <div class="footer-contact-item"><i class="fas fa-phone"></i><span>0530 310 73 20</span></div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="/cdn-cgi/l/email-protection#395a5c4b584a5c4b585450524d56434c795e54585055175a5654" style="color: var(--text-muted); text-decoration: none;"><span class="__cf_email__" data-cfemail="d0b3b5a2b1a3b5a2b1bdb9bba4bfaaa590b7bdb1b9bcfeb3bfbd">ceraseramiktozu@gmail.com</span></a></span>
+                    </div>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>İzmir, Türkiye</span></div>
+                </div>
+                <div class="footer-box">
+                    <h3 class="gold-text">Sosyal Medya</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px; line-height:1.6;">Güncel çalışmalar ve duyurular için bizi takip edin.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/seramiktozu/" target="_blank" rel="noopener" aria-label="Instagram hesabımızı ziyaret edin"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100066599107208" target="_blank" rel="noopener" aria-label="Facebook sayfamızı ziyaret edin"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Cera Seramik Tozu. Tüm hakları saklıdır.</span>
+                <span>İzmir, Türkiye</span>
+            </div>
+        </footer>
+
+    </main>
+
+    <a href="https://wa.me/905303107320?text=Merhaba%20Cera%20Seramik%20Tozu%20sat%C4%B1n%20almak%20istiyorum." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geç">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+    </a>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Cera Seramik Tozu",
+        "url": "https://ceraseramiktozu.com",
+        "logo": "cera/logo.jpg",
+        "description": "Modern sanatçılar için yüksek performanslı döküm malzemesi",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+90-530-310-73-20",
+            "contactType": "customer service",
+            "areaServed": "TR",
+            "availableLanguage": "Turkish"
+        },
+        "sameAs": [
+            "https://www.instagram.com/seramiktozu/",
+            "https://www.facebook.com/p/Cera-Seramik-Tozu-100064220733979/"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "İzmir",
+            "addressCountry": "TR"
+        }
+    }
+    </script>
+
+    <!-- FIREBASE MODULE -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCjVkJgEJvytEW4rVmq1W2PQsxhkfjiG9w",
+            authDomain: "ceraseramiktozuu.firebaseapp.com",
+            projectId: "ceraseramiktozuu",
+            storageBucket: "ceraseramiktozuu.firebasestorage.app",
+            messagingSenderId: "875494386880",
+            appId: "1:875494386880:web:f742c5c658f96650b15125"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const form = document.getElementById('firebaseContactForm');
+        const submitBtn = form.querySelector('.submit-btn');
+        const successMsg = document.getElementById('successMsg');
+        const errorMsg = document.getElementById('errorMsg');
+        const nameInput = document.getElementById('custName');
+        const phoneInput = document.getElementById('custPhone');
+
+        phoneInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value.length <= 3) { value = value; }
+                else if (value.length <= 6) { value = value.slice(0, 3) + ' ' + value.slice(3); }
+                else if (value.length <= 8) { value = value.slice(0, 3) + ' ' + value.slice(3, 6) + ' ' + value.slice(6); }
+                else { value = value.slice(0, 3) + ' ' + value.slice(3, 6) + ' ' + value.slice(6, 8) + ' ' + value.slice(8, 10); }
+            }
+            e.target.value = value;
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (!form.checkValidity()) { form.reportValidity(); return; }
+            const name = nameInput.value.trim();
+            const phone = phoneInput.value.trim().replace(/\s/g, '');
+            const message = document.getElementById('custMsg').value.trim();
+            if (!name || !phone) { showError("Lütfen tüm zorunlu alanları doldurun."); return; }
+            if (phone.length < 10) { showError("Lütfen geçerli bir telefon numarası girin."); return; }
+            submitBtn.disabled = true;
+            submitBtn.classList.add('loading');
+            errorMsg.style.display = 'none';
+            successMsg.style.display = 'none';
+            try {
+                await addDoc(collection(db, "mesajlar"), { ad: name, tel: phone, mesaj: message, tarih: serverTimestamp() });
+                successMsg.style.display = "block";
+                form.reset();
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                setTimeout(() => { successMsg.style.display = "none"; }, 8000);
+            } catch (err) {
+                console.error('Form error:', err);
+                showError("Mesaj gönderilemedi. Lütfen tekrar deneyin veya telefon ile iletişime geçin.");
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+            }
+        });
+
+        function showError(message) {
+            errorMsg.textContent = `✗ ${message}`;
+            errorMsg.style.display = "block";
+            setTimeout(() => { errorMsg.style.display = "none"; }, 8000);
+        }
+    </script>
+
+    <!-- SAYFA GEÇİŞ ANİMASYONU -->
+    <script>
+        (function() {
+            if (history.scrollRestoration) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            };
+
+            'use strict';
+
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    document.body.classList.add('is-loaded');
+                }, 100);
+            });
+
+            document.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    var href = this.getAttribute('href');
+                    var target = this.getAttribute('target');
+                    if (
+                        href &&
+                        !href.startsWith('#') &&
+                        !href.startsWith('tel') &&
+                        !href.startsWith('mailto') &&
+                        !href.startsWith('javascript') &&
+                        target !== '_blank'
+                    ) {
+                        e.preventDefault();
+                        document.body.classList.remove('is-loaded');
+                        setTimeout(function() {
+                            window.location.href = href;
+                        }, 700);
+                    }
+                });
+            });
+        })();
+    </script>
+
+    <!-- KARIŞIM HESAPLAYICI JAVASCRIPT -->
+    <script>
+        (function() {
+            'use strict';
+
+            var moldInput      = document.getElementById('moldWeight');
+            var resultPowder   = document.getElementById('resultPowder');
+            var resultWater    = document.getElementById('resultWater');
+            var barPowderEl    = document.getElementById('barPowder');
+            var barWaterEl     = document.getElementById('barWater');
+            var barPowderPct   = document.getElementById('barPowderPct');
+            var barWaterPct    = document.getElementById('barWaterPct');
+            var emptyState     = document.getElementById('calcEmptyState');
+            var resultsWrap    = document.getElementById('calcResultsWrap');
+            var ratioBtns      = document.querySelectorAll('.ratio-btn');
+
+            // Su miktarı 1 kg başına sabit (ml): standart=250, sert=225, akışkan=275
+            var currentWaterPerKg = 250;
+
+            // Oran butonları
+            ratioBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    ratioBtns.forEach(function(b) {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-pressed', 'false');
+                    });
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-pressed', 'true');
+                    currentWaterPerKg = parseFloat(btn.dataset.waterPerKg);
+                    calculate();
+                });
+            });
+
+            function animateValue(el, newVal) {
+                el.classList.remove('animate');
+                void el.offsetWidth; // reflow
+                el.textContent = newVal;
+                el.classList.add('animate');
+            }
+
+            function calculate() {
+                var raw = parseFloat(moldInput.value);
+
+                if (!raw || raw <= 0 || isNaN(raw)) {
+                    emptyState.classList.remove('hidden');
+                    resultsWrap.classList.add('hidden');
+                    return;
+                }
+
+                // Su = (kalıp gramı / 1000) * waterPerKg, yuvarlı
+                var water  = Math.round((raw / 1000) * currentWaterPerKg);
+                var powder = raw - water;
+
+                // Oran yüzdeleri (görsel bar için)
+                var waterPct  = Math.round(water  / raw * 100);
+                var powderPct = 100 - waterPct;
+
+                emptyState.classList.add('hidden');
+                resultsWrap.classList.remove('hidden');
+
+                animateValue(resultPowder, powder);
+                animateValue(resultWater,  water);
+
+                // Oran çubuğu
+                barPowderEl.style.width  = powderPct + '%';
+                barWaterEl.style.width   = waterPct  + '%';
+                barPowderPct.textContent = powderPct;
+                barWaterPct.textContent  = waterPct;
+            }
+
+            moldInput.addEventListener('input', calculate);
+
+            // Sayı sınırları
+            moldInput.addEventListener('blur', function() {
+                var v = parseFloat(this.value);
+                if (v > 99999) { this.value = 99999; calculate(); }
+                if (v < 1 && this.value !== '') { this.value = 1; calculate(); }
+            });
+
+        })();
+    </script>
+
+    <!-- MAIN JAVASCRIPT -->
+    <script>
+        (function() {
+            async function startIntro() {
+                localStorage.setItem('introShown', 'true');
+                const words = ["KUSURSUZ", "ESTETİK", "DAYANIKLI", "CERA"];
+                const textElement = document.getElementById('intro-text');
+                window.scrollTo(0, 0);
+                document.body.style.overflow = "hidden";
+                for (let word of words) {
+                    textElement.innerText = word;
+                    textElement.className = '';
+                    await new Promise(r => setTimeout(r, 100));
+                    textElement.classList.add('visible');
+                    await new Promise(r => setTimeout(r, 2200));
+                    textElement.classList.remove('visible');
+                    textElement.classList.add('exit');
+                    await new Promise(r => setTimeout(r, 1600));
+                }
+                document.body.classList.add('loaded');
+                setTimeout(() => {
+                    document.getElementById('intro-container').style.display = 'none';
+                    document.body.style.overflow = "auto";
+                }, 2000);
+            }
+
+            function skipIntro() {
+                document.getElementById('intro-container').style.display = 'none';
+                document.getElementById('intro-curtain').style.display = 'none';
+                document.body.style.overflow = "auto";
+                document.body.classList.add('loaded');
+            }
+
+            const nav = document.getElementById('mainNav');
+            let ticking = false;
+            function updateNav() {
+                nav.classList.toggle('scrolled', window.scrollY > 60);
+                ticking = false;
+            }
+            window.addEventListener('scroll', () => {
+                if (!ticking) { window.requestAnimationFrame(updateNav); ticking = true; }
+            }, { passive: true });
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) { entry.target.classList.add('active'); revealObserver.unobserve(entry.target); }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+            document.querySelectorAll('.reveal, .info-box').forEach(el => revealObserver.observe(el));
+
+            const videoOverlay = document.getElementById('videoOverlay');
+            const videoIframe = document.getElementById('ceraVideo');
+            if (videoOverlay && videoIframe) {
+                const playVideo = () => {
+                    videoOverlay.classList.add('hidden');
+                    let src = videoIframe.src;
+                    if (!src.includes('autoplay=1')) { videoIframe.src = src + (src.includes('?') ? '&' : '?') + 'autoplay=1'; }
+                };
+                videoOverlay.addEventListener('click', playVideo);
+                videoOverlay.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playVideo(); } });
+            }
+
+            const galleryContainer = document.getElementById('galleryScrollContainer');
+            const galleryTrack = document.getElementById('galleryTrack');
+            const slides = document.querySelectorAll('.gallery-slide');
+            const totalImages = slides.length;
+            const imageWidth = 500;
+            const gap = 30;
+            let initialOffset = 0;
+
+            function updateGallery() {
+                if (!galleryContainer || !galleryTrack) return;
+                if (initialOffset === 0) {
+                    const viewportWidth = window.innerWidth;
+                    initialOffset = (viewportWidth / 2) - (imageWidth / 2);
+                }
+                const rect = galleryContainer.getBoundingClientRect();
+                const containerHeight = galleryContainer.offsetHeight;
+                const windowHeight = window.innerHeight;
+                const scrolled = -rect.top;
+                const totalScroll = containerHeight - windowHeight;
+                const scrollProgress = Math.max(0, Math.min(1, scrolled / totalScroll));
+                const maxTranslateX = (imageWidth + gap) * (totalImages - 1);
+                const translateX = initialOffset - (scrollProgress * maxTranslateX);
+                galleryTrack.style.transform = `translateX(${translateX}px)`;
+            }
+
+            let galleryTicking = false;
+            window.addEventListener('scroll', () => {
+                if (!galleryTicking) {
+                    window.requestAnimationFrame(() => { updateGallery(); galleryTicking = false; });
+                    galleryTicking = true;
+                }
+            }, { passive: true });
+
+            window.addEventListener('load', () => {
+                const introShown = localStorage.getItem('introShown');
+                if (introShown) skipIntro();
+                else startIntro();
+                updateGallery();
+            });
+
+            const hamburger = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (hamburger && mobileMenu) {
+                hamburger.addEventListener('click', () => {
+                    const isActive = hamburger.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                    hamburger.setAttribute('aria-expanded', isActive);
+                    document.body.style.overflow = isActive ? 'hidden' : '';
+                });
+                const mobileLinks = mobileMenu.querySelectorAll('.mobile-menu-links a, .mobile-menu-phone a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => { updateGallery(); }, 150);
+            });
+        })();
+    </script>
+
+    <!-- MOBİL YATAY KAYMA ENGELLEYİCİ + CHATBASE AYARLARI -->
+    <style>
+        @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden !important;
+            }
+        }
+
+        #chatbase-bubble-button {
+            bottom: 100px !important;
+            right: 28px !important;
+        }
+
+        @media (max-width: 768px) {
+            #chatbase-bubble-button {
+                bottom: 90px !important;
+                right: 16px !important;
+                transform: scale(0.85) !important;
+                transform-origin: bottom right !important;
+            }
+            #chatbase-bubble-window {
+                width: calc(100vw - 20px) !important;
+                max-width: calc(100vw - 20px) !important;
+                height: 70vh !important;
+                max-height: 70vh !important;
+                right: 10px !important;
+                left: 10px !important;
+                bottom: 160px !important;
+                border-radius: 16px !important;
+                overflow: hidden !important;
+            }
+        }
+    </style>
+
+    <!-- CHATBASE AI CHAT BOT -->
+    <script>
+        window.addEventListener("load", () => {
+            window.chatbase("setOptions", {
+                chatbotId: "HUqRssJp-JreJ3Gxv4d5b"
+            });
+        });
+        (function(){
+            if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+                window.chatbase = function(){
+                    if(!window.chatbase.q){ window.chatbase.q = []; }
+                    window.chatbase.q.push(arguments);
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop){
+                        if(prop === "q"){ return target.q; }
+                        return function(){ return target(prop, ...arguments); };
+                    }
+                });
+            }
+            const onLoad = function(){
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "HUqRssJp-JreJ3Gxv4d5b";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            };
+            if(document.readyState === "complete"){ onLoad(); }
+            else { window.addEventListener("load", onLoad); }
+        })();
+    </script>
+
+</body>
+</html>

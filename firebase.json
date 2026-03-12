@@ -1,0 +1,33 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "cera-whatsapp/**",
+      "server/**",
+      "CERA YEDEK/**",
+      "package.json",
+      "package-lock.json",
+      ".env"
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.gstatic.com https://www.google-analytics.com https://www.googletagmanager.com https://cdn.socket.io https://*.ngrok-free.app https://*.ngrok-free.dev https://*.firebaseio.com https://www.chatbase.co; script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' https://www.gstatic.com https://www.google-analytics.com https://www.googletagmanager.com https://cdn.socket.io https://*.ngrok-free.app https://*.ngrok-free.dev https://*.firebaseio.com https://www.chatbase.co; connect-src 'self' https: wss: http://localhost:3001 ws://localhost:3001 https://*.ngrok-free.app https://*.ngrok-free.dev https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com https://www.google-analytics.com https://analytics.google.com https://firestore.googleapis.com https://stats.g.doubleclick.net https://www.chatbase.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; frame-src 'self' https://www.youtube.com https://www.chatbase.co;"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

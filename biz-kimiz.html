@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cera Seramik Tozu - Biz Kimiz. Sanat ve üretim disiplinlerini teknoloji ve malzeme bilgisiyle buluşturan kurumsal yaklaşım.">
+    <meta name="robots" content="index, follow">
+    <title>Biz Kimiz? | Cera Seramik Tozu</title>
+    <link rel="icon" type="image/jpeg" href="cera/son.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c6a87c;
+            --gold-light: #e8d5b0;
+            --gold-dark: #8a6c42;
+            --black: #050505;
+            --surface: #0d0d0d;
+            --surface-2: #141414;
+            --border: rgba(198,168,124,0.15);
+            --border-hover: rgba(198,168,124,0.45);
+            --text: #f0ece4;
+            --text-muted: #888;
+            --gold-grad: linear-gradient(135deg, #bf953f 0%, #fcf6ba 40%, #b38728 70%, #aa771c 100%);
+            --transition-base: 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+            --soft-curve: cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        /* ===== SAYFA GEÇİŞ ANİMASYONU ===== */
+        #page-transition-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: #0a0a0a;
+            z-index: 99999;
+            pointer-events: none;
+            opacity: 1;
+            visibility: visible;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+                        visibility 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        body.is-loaded #page-transition-overlay { opacity: 0; visibility: hidden; }
+
+        main {
+            opacity: 0; transform: translateY(20px); filter: blur(5px);
+            transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                        filter 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        body.is-loaded main { opacity: 1; transform: translateY(0); filter: blur(0); }
+        /* ===== GEÇİŞ ANİMASYONU SONU ===== */
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+        }
+        body {
+            background: var(--black); color: var(--text);
+            font-family: 'Manrope', sans-serif; font-weight: 300;
+            overflow-x: hidden; -webkit-font-smoothing: antialiased;
+            -webkit-tap-highlight-color: transparent;
+        }
+        *:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+        .skip-link { position: absolute; top: -100px; left: 0; background: var(--gold); color: var(--black); padding: 12px 24px; text-decoration: none; z-index: 10001; font-weight: 600; }
+        .skip-link:focus { top: 0; }
+        body::before {
+            content: ""; position: fixed; inset: 0;
+            background: linear-gradient(rgba(5,5,5,0.88), rgba(5,5,5,0.94)), url('cera/foto15.jpg') center/cover no-repeat;
+            z-index: -2;
+        }
+        body::after {
+            content: ""; position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            z-index: -1; pointer-events: none; opacity: 0.6;
+        }
+        .gold-text { background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 0 5%; height: 72px;
+            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+            background: rgba(5,5,5,0.82); backdrop-filter: blur(20px) saturate(1.5);
+            border-bottom: 1px solid var(--border); transition: background var(--transition-base);
+        }
+        nav.scrolled { background: rgba(5,5,5,0.97); }
+        .brand-logo-img { height: 52px; width: auto; display: block; }
+        .nav-back-btn {
+            display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px;
+            font-size: 0.72rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+            text-decoration: none; color: var(--gold); border: 1px solid var(--border);
+            background: transparent; position: relative; overflow: hidden;
+            transition: color 0.5s var(--soft-curve), border-color 0.5s var(--soft-curve), box-shadow 0.5s var(--soft-curve);
+            animation: navBtnFadeIn 0.8s var(--soft-curve) 0.3s both;
+        }
+        .nav-back-btn::before { content: ""; position: absolute; inset: 0; background: var(--gold-grad); transform: translateX(-100%); transition: transform 0.5s var(--soft-curve); z-index: -1; }
+        .nav-back-btn:hover { color: var(--black); border-color: var(--gold); box-shadow: 0 0 24px rgba(198,168,124,0.25); }
+        .nav-back-btn:hover::before { transform: translateX(0); }
+        .nav-back-btn i { transition: transform 0.4s var(--soft-curve); }
+        .nav-back-btn:hover i { transform: translateX(-4px); }
+        @keyframes navBtnFadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* SAYFA */
+        .page-content { padding: 120px 5% 100px; max-width: 1200px; margin: 0 auto; }
+        .gold-border-box {
+            padding: 70px 50px;
+            background: rgba(255,255,255,0.015); backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 0 rgba(198,168,124,0.12) inset, 0 40px 80px rgba(0,0,0,0.5);
+            position: relative; overflow: hidden;
+        }
+        .gold-border-box::before, .gold-border-box::after { content: ""; position: absolute; width: 60px; height: 60px; border-color: var(--gold); border-style: solid; }
+        .gold-border-box::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+        .gold-border-box::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+        .content-section h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; margin-bottom: 40px; line-height: 1.2; }
+        .content-section p { margin-bottom: 25px; color: #ccc; font-size: 1.1rem; line-height: 1.9; text-align: justify; }
+        .content-section .highlight { color: var(--gold); font-weight: 500; }
+
+        /* FOOTER */
+        .info-footer { padding: 80px 5% 60px; background: var(--surface); border-top: 1px solid var(--border); }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; }
+        .footer-box { flex: 1; min-width: 220px; }
+        .footer-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+        .footer-link { color: var(--text-muted); text-decoration: none; display: block; margin-bottom: 14px; font-size: 0.88rem; letter-spacing: 0.3px; transition: color 0.3s, padding-left 0.3s; }
+        .footer-link:hover { color: var(--gold); padding-left: 6px; }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; color: var(--text-muted); font-size: 0.88rem; }
+        .footer-contact-item i { color: var(--gold); width: 16px; margin-top: 2px; font-size: 0.85rem; }
+        .footer-contact-item a { color: inherit; text-decoration: none; }
+        .footer-contact-item a:hover { color: var(--gold); }
+        .social-icons { display: flex; gap: 30px; margin-top: 20px; }
+        .social-icons a { color: var(--gold); font-size: 1.8rem; transition: 0.4s; text-decoration: none; }
+        .social-icons a:hover { opacity: 0.7; transform: translateY(-3px); }
+        .footer-bottom { max-width: 1200px; margin: 50px auto 0; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.5px; }
+        .wa-float { position: fixed; bottom: 28px; right: 28px; background: #25D366; color: #fff; padding: 13px 22px; border-radius: 40px; text-decoration: none; z-index: 9999; display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.88rem; box-shadow: 0 6px 24px rgba(37,211,102,0.35); transition: transform 0.3s, box-shadow 0.3s; }
+        .wa-float:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(37,211,102,0.45); }
+        @media (max-width: 640px) {
+            .gold-border-box { padding: 40px 24px; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SAYFA GEÇİŞ PERDESİ -->
+    <div id="page-transition-overlay" aria-hidden="true">
+    </div>
+
+    <a href="#main-content" class="skip-link">Ana İçeriğe Geç</a>
+
+    <nav id="mainNav" role="navigation" aria-label="Ana navigasyon">
+        <a href="index.html" aria-label="Cera Seramik Tozu Ana Sayfa">
+            <img src="cera/logo3.png" alt="Cera Seramik Tozu" class="brand-logo-img" width="52" height="52">
+        </a>
+        <a href="index.html" class="nav-back-btn" aria-label="Ana sayfaya dön">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i> Ana Sayfaya Dön
+        </a>
+    </nav>
+
+    <main class="page-content" id="main-content">
+        <div class="gold-border-box">
+            <div class="content-section">
+                <h1 class="gold-text">Biz Kimiz?</h1>
+                <p>
+                    <span class="highlight">Cera Seramik</span>, sanat ve üretim disiplinlerini teknoloji, malzeme bilgisi ve mühendislik yaklaşımıyla bir araya getirmek amacıyla kurulmuş bir markadır. Temel motivasyonumuz; döküm ve şekillendirme alanında çalışan bireyler için güvenilir, tutarlı ve yüksek standartlara sahip bir çalışma zemini oluşturmaktır.
+                </p>
+                <p>
+                    Marka yaklaşımımız, yalnızca elde edilen sonuçlara değil, bu sonuçlara ulaştıran süreçlerin doğruluğuna odaklanır. Araştırma ve geliştirme faaliyetlerimiz; malzeme davranışı, süreç kontrolü ve uzun vadeli performans gibi ölçülebilir kriterler üzerinden yürütülür. Bu sayede farklı deneyim seviyelerine sahip kullanıcılar için öngörülebilir ve sürdürülebilir bir yapı oluşturulur.
+                </p>
+                <p>
+                    <span class="highlight">Cera Seramik</span> için kalite, tek başına dayanıklılık ya da görsel çıktı ile sınırlı değildir. Tutarlılık, tekrarlanabilirlik ve kullanım sürecinde kontrol edilebilirlik, kalite anlayışımızın temel bileşenleridir. Bu nedenle süreçlerimizi sürekli analiz eder, geliştirilmesi gereken alanları veriye dayalı olarak ele alırız.
+                </p>
+                <p>
+                    Ekibimiz, üretimi yalnızca teknik bir faaliyet olarak değil, aynı zamanda düşünsel ve tasarımsal bir süreç olarak değerlendirir. Cera Seramik olarak hedefimiz; kullanıcılarımıza yalnızca bir marka değil, uzun vadede güven duyabilecekleri bir üretim altyapısı ve sürdürülebilir bir iş ortaklığı sunmaktır.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="info-footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3 class="gold-text">Hızlı Menü</h3>
+                <a href="index.html" class="footer-link">Anasayfa</a>
+                <a href="biz-kimiz.html" class="footer-link">Biz Kimiz?</a>
+                <a href="nasıl-kullanilir.html" class="footer-link">Nasıl Kullanılır?</a>
+                <a href="sss.html" class="footer-link">Sıkça Sorulan Sorular</a>
+            </div>
+            <div class="footer-box">
+                <h3 class="gold-text">İletişim</h3>
+                <div class="footer-contact-item"><i class="fas fa-phone"></i><span>0530 310 73 20</span></div>
+                <div class="footer-contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:ceraseramiktozu@gmail.com">ceraseramiktozu@gmail.com</a></span></div>
+                <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>İzmir, Türkiye</span></div>
+            </div>
+            <div class="footer-box">
+                <h3 class="gold-text">Sosyal Medya</h3>
+                <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px; line-height:1.6;">Güncel çalışmalar ve duyurular için bizi takip edin.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/seramiktozu/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100066599107208" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Cera Seramik Tozu. Tüm hakları saklıdır.</span>
+            <span>İzmir, Türkiye</span>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/905303107320?text=Merhaba%20Cera%20Seramik%20Tozu%20sat%C4%B1n%20almak%20istiyorum." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geç">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+    </a>
+
+    <script>
+        (function() {
+            // Sayfa yenilendiğinde tarayıcının kaldığı yeri hatırlamasını engelle
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+
+// Sayfa yüklendiği an en başa (0,0 koordinatına) ışınla
+window.scrollTo(0, 0);
+
+// Alternatif: Sayfa tamamen yüklendiğinde garantiye al
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
+            // Navbar scroll
+            var nav = document.getElementById('mainNav');
+            var ticking = false;
+            function updateNav() { nav.classList.toggle('scrolled', window.scrollY > 60); ticking = false; }
+            window.addEventListener('scroll', function() {
+                if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
+            }, { passive: true });
+
+            // SAYFA GEÇİŞ ANİMASYONU
+            window.addEventListener('load', function() {
+                setTimeout(function() { document.body.classList.add('is-loaded'); }, 100);
+            });
+
+            document.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    var href = this.getAttribute('href');
+                    var target = this.getAttribute('target');
+                    if (href && !href.startsWith('#') && !href.startsWith('tel') && !href.startsWith('mailto') && !href.startsWith('javascript') && target !== '_blank') {
+                        e.preventDefault();
+                        document.body.classList.remove('is-loaded');
+                        setTimeout(function() { window.location.href = href; }, 700);
+                    }
+                });
+            });
+
+            window.addEventListener('pageshow', function(e) {
+                if (e.persisted) { document.body.classList.add('is-loaded'); }
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cera Seramik Tozu hakkında sıkça sorulan sorular: karışım oranları, kullanım, kuruma, boyama, sipariş ve daha fazlası.">
+    <meta name="robots" content="index, follow">
+    <title>Sıkça Sorulan Sorular | Cera Seramik Tozu</title>
+    <link rel="icon" type="image/jpeg" href="cera/son.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c6a87c;
+            --gold-light: #e8d5b0;
+            --gold-dark: #8a6c42;
+            --black: #050505;
+            --surface: #0d0d0d;
+            --surface-2: #141414;
+            --border: rgba(198,168,124,0.15);
+            --border-hover: rgba(198,168,124,0.45);
+            --text: #f0ece4;
+            --text-muted: #888;
+            --gold-grad: linear-gradient(135deg, #bf953f 0%, #fcf6ba 40%, #b38728 70%, #aa771c 100%);
+            --transition-base: 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+            --soft-curve: cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        /* ===== SAYFA GEÇİŞ ANİMASYONU ===== */
+        #page-transition-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: #0a0a0a;
+            z-index: 99999;
+            pointer-events: none;
+            opacity: 1;
+            visibility: visible;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+                        visibility 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        body.is-loaded #page-transition-overlay { opacity: 0; visibility: hidden; }
+
+        main {
+            opacity: 0; transform: translateY(20px); filter: blur(5px);
+            transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                        filter 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        body.is-loaded main { opacity: 1; transform: translateY(0); filter: blur(0); }
+        /* ===== GEÇİŞ ANİMASYONU SONU ===== */
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+        }
+        body {
+            background: var(--black); color: var(--text);
+            font-family: 'Manrope', sans-serif; font-weight: 300;
+            overflow-x: hidden; -webkit-font-smoothing: antialiased;
+            -webkit-tap-highlight-color: transparent;
+        }
+        *:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+        .skip-link { position: absolute; top: -100px; left: 0; background: var(--gold); color: var(--black); padding: 12px 24px; text-decoration: none; z-index: 10001; font-weight: 600; }
+        .skip-link:focus { top: 0; }
+        body::before {
+            content: ""; position: fixed; inset: 0;
+            background: linear-gradient(rgba(5,5,5,0.88), rgba(5,5,5,0.94)), url('cera/foto15.jpg') center/cover no-repeat;
+            z-index: -2;
+        }
+        body::after {
+            content: ""; position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            z-index: -1; pointer-events: none; opacity: 0.6;
+        }
+        .gold-text { background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 0 5%; height: 72px;
+            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+            background: rgba(5,5,5,0.82); backdrop-filter: blur(20px) saturate(1.5);
+            border-bottom: 1px solid var(--border); transition: background var(--transition-base);
+        }
+        nav.scrolled { background: rgba(5,5,5,0.97); }
+        .brand-logo-img { height: 52px; width: auto; display: block; }
+        .nav-back-btn {
+            display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px;
+            font-size: 0.72rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+            text-decoration: none; color: var(--gold); border: 1px solid var(--border);
+            background: transparent; position: relative; overflow: hidden;
+            transition: color 0.5s var(--soft-curve), border-color 0.5s var(--soft-curve), box-shadow 0.5s var(--soft-curve);
+            animation: navBtnFadeIn 0.8s var(--soft-curve) 0.3s both;
+        }
+        .nav-back-btn::before { content: ""; position: absolute; inset: 0; background: var(--gold-grad); transform: translateX(-100%); transition: transform 0.5s var(--soft-curve); z-index: -1; }
+        .nav-back-btn:hover { color: var(--black); border-color: var(--gold); box-shadow: 0 0 24px rgba(198,168,124,0.25); }
+        .nav-back-btn:hover::before { transform: translateX(0); }
+        .nav-back-btn i { transition: transform 0.4s var(--soft-curve); }
+        .nav-back-btn:hover i { transform: translateX(-4px); }
+        @keyframes navBtnFadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* SAYFA */
+        .page-content { padding: 120px 5% 100px; max-width: 900px; margin: 0 auto; }
+        .header-section { text-align: center; margin-bottom: 50px; }
+        .header-section .section-label { font-size: 0.68rem; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+        .header-section h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.2; }
+
+        .faq-search-wrap { margin-bottom: 28px; position: relative; }
+        .faq-search-wrap i { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--gold); font-size: 0.9rem; pointer-events: none; }
+        .faq-search {
+            width: 100%; padding: 16px 20px 16px 48px;
+            background: rgba(0,0,0,0.4); border: 1px solid var(--border);
+            color: var(--text); font-family: 'Manrope', sans-serif; font-size: 0.95rem;
+            border-radius: 0; transition: border-color 0.3s;
+        }
+        .faq-search:focus { outline: none; border-color: var(--gold); }
+        .faq-search::placeholder { color: var(--text-muted); }
+        .faq-no-result { display: none; padding: 24px; text-align: center; color: var(--text-muted); }
+        .faq-no-result.visible { display: block; }
+        .faq-item.hidden { display: none !important; }
+
+        /* SSS Accordion */
+        .faq-container {
+            background: rgba(255,255,255,0.015); backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 0 rgba(198,168,124,0.12) inset, 0 40px 80px rgba(0,0,0,0.5);
+            position: relative; overflow: hidden;
+        }
+        .faq-container::before, .faq-container::after { content: ""; position: absolute; width: 50px; height: 50px; border-color: var(--gold); border-style: solid; }
+        .faq-container::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+        .faq-container::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+        .faq-item { border-bottom: 1px solid var(--border); transition: background 0.3s var(--soft-curve); }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item:hover { background: rgba(255,255,255,0.02); }
+        .faq-item.active { background: rgba(198,168,124,0.06); }
+        .faq-trigger {
+            width: 100%; padding: 24px 28px; background: none; border: none;
+            color: var(--text); display: flex; justify-content: space-between; align-items: center;
+            gap: 20px; cursor: pointer; text-align: left; font-family: 'Manrope', sans-serif;
+            font-size: 1rem; font-weight: 500; letter-spacing: 0.3px; transition: color 0.3s;
+        }
+        .faq-trigger:hover { color: var(--gold-light); }
+        .faq-trigger .icon-box { position: relative; width: 14px; height: 14px; flex-shrink: 0; }
+        .faq-trigger .icon-box::before, .faq-trigger .icon-box::after { content: ""; position: absolute; background-color: var(--gold); transition: transform 0.4s var(--soft-curve), opacity 0.4s; }
+        .faq-trigger .icon-box::before { width: 100%; height: 1px; top: 50%; left: 0; }
+        .faq-trigger .icon-box::after { width: 1px; height: 100%; left: 50%; top: 0; }
+        .faq-item.active .icon-box::after { transform: rotate(90deg); opacity: 0; }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--soft-curve); }
+        .faq-content-inner { padding: 0 28px 24px; }
+        .faq-content p { color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; }
+
+        /* FOOTER */
+        .info-footer { padding: 80px 5% 60px; background: var(--surface); border-top: 1px solid var(--border); }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; }
+        .footer-box { flex: 1; min-width: 220px; }
+        .footer-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+        .footer-link { color: var(--text-muted); text-decoration: none; display: block; margin-bottom: 14px; font-size: 0.88rem; letter-spacing: 0.3px; transition: color 0.3s, padding-left 0.3s; }
+        .footer-link:hover { color: var(--gold); padding-left: 6px; }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; color: var(--text-muted); font-size: 0.88rem; }
+        .footer-contact-item i { color: var(--gold); width: 16px; margin-top: 2px; font-size: 0.85rem; }
+        .footer-contact-item a { color: inherit; text-decoration: none; }
+        .footer-contact-item a:hover { color: var(--gold); }
+        .social-icons { display: flex; gap: 30px; margin-top: 20px; }
+        .social-icons a { color: var(--gold); font-size: 1.8rem; transition: 0.4s; text-decoration: none; }
+        .social-icons a:hover { opacity: 0.7; transform: translateY(-3px); }
+        .footer-bottom { max-width: 1200px; margin: 50px auto 0; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.5px; }
+        .wa-float { position: fixed; bottom: 28px; right: 28px; background: #25D366; color: #fff; padding: 13px 22px; border-radius: 40px; text-decoration: none; z-index: 9999; display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.88rem; box-shadow: 0 6px 24px rgba(37,211,102,0.35); transition: transform 0.3s, box-shadow 0.3s; }
+        .wa-float:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(37,211,102,0.45); }
+        @media (max-width: 640px) {
+            .faq-trigger { padding: 20px; font-size: 0.95rem; }
+            .faq-content-inner { padding: 0 20px 20px; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SAYFA GEÇİŞ PERDESİ -->
+    <div id="page-transition-overlay" aria-hidden="true">
+    </div>
+
+    <a href="#main-content" class="skip-link">Ana İçeriğe Geç</a>
+
+    <nav id="mainNav" role="navigation" aria-label="Ana navigasyon">
+        <a href="index.html" aria-label="Cera Seramik Tozu Ana Sayfa">
+            <img src="cera/logo3.png" alt="Cera Seramik Tozu" class="brand-logo-img" width="52" height="52">
+        </a>
+        <a href="index.html" class="nav-back-btn" aria-label="Ana sayfaya dön">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i> Ana Sayfaya Dön
+        </a>
+    </nav>
+
+    <main class="page-content" id="main-content">
+        <div class="header-section">
+            <p class="section-label">Destek</p>
+            <h1 class="gold-text">Sıkça Sorulan Sorular</h1>
+        </div>
+
+        <div class="faq-search-wrap">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input type="search" class="faq-search" id="faqSearch" placeholder="Soru ara..." autocomplete="off" aria-label="Sorularda ara">
+        </div>
+        <p class="faq-no-result" id="faqNoResult">Bu aramayla eşleşen soru bulunamadı.</p>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-1" id="faq-trigger-1">
+                    <span>Karışım oranları nasıl olmalı?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-1" role="region" aria-labelledby="faq-trigger-1">
+                    <div class="faq-content-inner"><p>1 kg Cera Seramik Tozu için 250 gr su idealdir. Pürüzsüz, homojen bir kıvam alana kadar karıştırınız. Çok koyu olursa az miktar su, çok akıcı olursa az miktar toz ekleyebilirsiniz.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-2" id="faq-trigger-2">
+                    <span>Kalıptan ne zaman çıkarabilirim?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-2" role="region" aria-labelledby="faq-trigger-2">
+                    <div class="faq-content-inner"><p>Ortalama 20–30 dakika içinde obje sertleşir. Kalıptan dikkatlice çıkarabilirsiniz. Tam kuruma ve dayanıklılık için 24 saat beklemeniz önerilir.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-3" id="faq-trigger-3">
+                    <span>Hangi kalıplarla kullanılır?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-3" role="region" aria-labelledby="faq-trigger-3">
+                    <div class="faq-content-inner"><p>Silikon kalıplarla kullanıma uygundur. Ürün, ince detaylara iyi nüfuz eder ve hava kabarcığı oluşumunu minimize eder. Kalıbın kuru ve temiz olmasına dikkat edin.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-4" id="faq-trigger-4">
+                    <span>Boya ve vernik sürülebilir mi?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-4" role="region" aria-labelledby="faq-trigger-4">
+                    <div class="faq-content-inner"><p>Evet. Cera, boya dostu bir yüzey sunar; akrilik, suluboya ve diğer el işi boyaları iyi tutar. Tam kuruduktan sonra vernik veya koruyucu sürerek parlak ya da mat bitiş elde edebilirsiniz.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-5" id="faq-trigger-5">
+                    <span>Zımpara yapmam gerekir mi?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-5" role="region" aria-labelledby="faq-trigger-5">
+                    <div class="faq-content-inner"><p>Özel formül sayesinde döküm sonrası yüzey zaten pürüzsüzdür; çoğu kullanımda zımpara gerekmez. İsterseniz ince detaylar için hafif bir zımpara uygulayabilirsiniz.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-6" id="faq-trigger-6">
+                    <span>Dış mekanda kullanılabilir mi?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-6" role="region" aria-labelledby="faq-trigger-6">
+                    <div class="faq-content-inner"><p>Gözeneksiz yapısı sayesinde nemden etkilenmez; bahçe süsleri, kapı numaraları gibi dış mekan objeleri için uygundur. Uzun süre direkt güneşte kalan yüzeylerde vernik kullanmanız ömrü artırır.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-7" id="faq-trigger-7">
+                    <span>Hava kabarcıklarını nasıl azaltırım?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-7" role="region" aria-labelledby="faq-trigger-7">
+                    <div class="faq-content-inner"><p>Karışımı çok hızlı çırpmayın; yavaş ve homojen karıştırma kabarcıkları azaltır. Kalıba dökerken mümkünse tek noktadan dökün ve kalıbı hafifçe sallayarak havanın çıkmasına yardımcı olun.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-8" id="faq-trigger-8">
+                    <span>Tozu nasıl saklamalıyım?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-8" role="region" aria-labelledby="faq-trigger-8">
+                    <div class="faq-content-inner"><p>Serin, kuru ve doğrudan güneş almayan bir yerde, ağzı kapalı poşet veya kap içinde saklayın. Nem alması performansı etkileyebilir.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-9" id="faq-trigger-9">
+                    <span>Raf ömrü ne kadardır?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-9" role="region" aria-labelledby="faq-trigger-9">
+                    <div class="faq-content-inner"><p>Doğru saklama koşullarında uzun yıllar kullanılabilir. Nem almamış ürün güvenle kullanılabilir.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-10" id="faq-trigger-10">
+                    <span>Nasıl sipariş verebilirim?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-10" role="region" aria-labelledby="faq-trigger-10">
+                    <div class="faq-content-inner"><p>Anasayfadaki iletişim formundan veya WhatsApp (0530 310 73 20) ile bize ulaşabilirsiniz. Ad, telefon ve talep ettiğiniz miktarı yazmanız yeterlidir; en kısa sürede dönüş yapıyoruz.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-11" id="faq-trigger-11">
+                    <span>Kargo süresi ve ödeme seçenekleri nelerdir?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-11" role="region" aria-labelledby="faq-trigger-11">
+                    <div class="faq-content-inner"><p>Kargo süresi adresinize göre 1–3 iş günü civarında değişir. Ödeme yöntemleri ve kargo ücreti hakkında detay için WhatsApp ile iletişime geçebilirsiniz.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-12" id="faq-trigger-12">
+                    <span>Toplu veya toptan sipariş imkânı var mı?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-12" role="region" aria-labelledby="faq-trigger-12">
+                    <div class="faq-content-inner"><p>Evet. Atölye, okul veya toplu kullanım için özel fiyat ve kargo seçenekleri sunuyoruz. İhtiyacınızı ve adresinizi yazarak bize ulaşmanız yeterli.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-13" id="faq-trigger-13">
+                    <span>Çocuklar kullanabilir mi?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-13" role="region" aria-labelledby="faq-trigger-13">
+                    <div class="faq-content-inner"><p>Ürün el işi ve hobi amaçlı kullanıma uygundur. Küçük çocuklarda yetişkin gözetimi önerilir; toz ve karışım aşamasında göz ve ağız temasından kaçınılmalıdır.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-14" id="faq-trigger-14">
+                    <span>Kuruyan kalıbı nasıl temizlerim?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-14" role="region" aria-labelledby="faq-trigger-14">
+                    <div class="faq-content-inner"><p>Silikon kalıpları ılık su ve yumuşak bir fırça ile temizleyebilirsiniz. Sert kalıplarda kalan artıkları nemli bezle alın; kalıbı kurutmadan tekrar kullanmayın.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-15" id="faq-trigger-15">
+                    <span>Farklı renklerde Cera var mı?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-15" role="region" aria-labelledby="faq-trigger-15">
+                    <div class="faq-content-inner"><p>Şu an beyaz/doğal ton satılmaktadır. Bu ton boya ve vernikle en iyi sonucu verir. Renkli ürün özel sipariş üzerine yapılmaktadır.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-16" id="faq-trigger-16">
+                    <span>Ağırlık ve dayanıklılık nasıldır?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-16" role="region" aria-labelledby="faq-trigger-16">
+                    <div class="faq-content-inner"><p>Cera, polimer takviyeli yapısı sayesinde normal alçıya göre çok daha dayanıklıdır. 1 cm kalınlığındaki bir plaka ortalama 15-20 kg ağırlık taşıyabilir. Ancak ince detaylı bölgeler darbelere karşı hassastır.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-17" id="faq-trigger-17">
+                    <span>Artık veya dökülen malzemeyi nasıl atabilirim?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-17" role="region" aria-labelledby="faq-trigger-17">
+                    <div class="faq-content-inner"><p>Kuru atıklar normal evsel atık olarak atılabilir. Sıvı karışımı lavaboya dökmeyiniz, katılaştırarak çöpe atınız. Çevre dostu bir üründür ancak bol suyla karıştırarak da seyreltebilirsiniz.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-18" id="faq-trigger-18">
+                    <span>Daha büyük objeler yapmak istiyorum, oranlar aynı mı?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-18" role="region" aria-labelledby="faq-trigger-18">
+                    <div class="faq-content-inner"><p>Evet, oranlar aynıdır. 1 kg toz için 250 gr su formülünü koruyarak ihtiyacınız kadar karışım hazırlayabilirsiniz. Büyük dökümlerde katmanlı döküm yaparak hava kabarcıklarını azaltabilirsiniz.</p></div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-19" id="faq-trigger-19">
+                    <span>Ne kadar süre karıştırmalıyım?</span><div class="icon-box" aria-hidden="true"></div>
+                </button>
+                <div class="faq-content" id="faq-19" role="region" aria-labelledby="faq-trigger-19">
+                    <div class="faq-content-inner"><p>Topak kalmayacak şekilde, homojen bir kıvam alana kadar (ortalama 2-3 dakika) karıştırın. Çok uzun süre karıştırmak karışımın ısınmasına ve priz süresinin kısalmasına neden olabilir.</p></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="info-footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3 class="gold-text">Hızlı Menü</h3>
+                <a href="index.html" class="footer-link">Anasayfa</a>
+                <a href="biz-kimiz.html" class="footer-link">Biz Kimiz?</a>
+                <a href="nasıl-kullanilir.html" class="footer-link">Nasıl Kullanılır?</a>
+                <a href="sss.html" class="footer-link">Sıkça Sorulan Sorular</a>
+                <a href="urunlerimiz.html" class="footer-link">Ürünlerimiz</a>
+            </div>
+            <div class="footer-box">
+                <h3 class="gold-text">İletişim</h3>
+                <div class="footer-contact-item"><i class="fas fa-phone"></i><span>0530 310 73 20</span></div>
+                <div class="footer-contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:ceraseramiktozu@gmail.com">ceraseramiktozu@gmail.com</a></span></div>
+                <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>İzmir, Türkiye</span></div>
+            </div>
+            <div class="footer-box">
+                <h3 class="gold-text">Sosyal Medya</h3>
+                <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px; line-height:1.6;">Güncel çalışmalar ve duyurular için bizi takip edin.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/seramiktozu/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100066599107208" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Cera Seramik Tozu. Tüm hakları saklıdır.</span>
+            <span>İzmir, Türkiye</span>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/905303107320?text=Merhaba%20Cera%20Seramik%20Tozu%20sat%C4%B1n%20almak%20istiyorum." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geç">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+    </a>
+
+    <script>
+        (function() {
+            // Sayfa yenilendiğinde tarayıcının kaldığı yeri hatırlamasını engelle
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+
+// Sayfa yüklendiği an en başa (0,0 koordinatına) ışınla
+window.scrollTo(0, 0);
+
+// Alternatif: Sayfa tamamen yüklendiğinde garantiye al
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
+            // Navbar scroll
+            var nav = document.getElementById('mainNav');
+            var ticking = false;
+            function updateNav() { nav.classList.toggle('scrolled', window.scrollY > 60); ticking = false; }
+            window.addEventListener('scroll', function() {
+                if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
+            }, { passive: true });
+
+            // FAQ Accordion
+            document.querySelectorAll('.faq-trigger').forEach(function(trigger) {
+                trigger.addEventListener('click', function() {
+                    var item = this.closest('.faq-item');
+                    var content = item.querySelector('.faq-content');
+                    var isOpen = item.classList.contains('active');
+                    document.querySelectorAll('.faq-item').forEach(function(i) {
+                        i.classList.remove('active');
+                        var c = i.querySelector('.faq-content');
+                        if (c) c.style.maxHeight = '';
+                        var t = i.querySelector('.faq-trigger');
+                        if (t) t.setAttribute('aria-expanded', 'false');
+                    });
+                    if (!isOpen) {
+                        item.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        trigger.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // FAQ Search
+            (function() {
+                var search = document.getElementById('faqSearch');
+                var noResult = document.getElementById('faqNoResult');
+                var items = document.querySelectorAll('.faq-item');
+                if (!search) return;
+                search.addEventListener('input', function() {
+                    var q = this.value.trim().toLowerCase();
+                    var visible = 0;
+                    items.forEach(function(item) {
+                        var trigger = item.querySelector('.faq-trigger span');
+                        var text = trigger ? trigger.textContent.toLowerCase() : '';
+                        var match = !q || text.indexOf(q) !== -1;
+                        item.classList.toggle('hidden', !match);
+                        if (match) visible++;
+                    });
+                    noResult.classList.toggle('visible', q.length > 0 && visible === 0);
+                });
+            })();
+
+            // SAYFA GEÇİŞ ANİMASYONU
+            window.addEventListener('load', function() {
+                setTimeout(function() { document.body.classList.add('is-loaded'); }, 100);
+            });
+
+            document.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    var href = this.getAttribute('href');
+                    var target = this.getAttribute('target');
+                    if (href && !href.startsWith('#') && !href.startsWith('tel') && !href.startsWith('mailto') && !href.startsWith('javascript') && target !== '_blank') {
+                        e.preventDefault();
+                        document.body.classList.remove('is-loaded');
+                        setTimeout(function() { window.location.href = href; }, 700);
+                    }
+                });
+            });
+
+            window.addEventListener('pageshow', function(e) {
+                if (e.persisted) { document.body.classList.add('is-loaded'); }
+            });
+        })();
+    </script>
+</body>
+</html>

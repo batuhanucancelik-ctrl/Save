@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürünlerimiz | Cera Seramik Tozu</title>
+    <link rel="icon" type="image/jpeg" href="cera/son.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c6a87c;
+            --gold-light: #e8d5b0;
+            --gold-dark: #8a6c42;
+            --black: #050505;
+            --surface: #0d0d0d;
+            --surface-2: #141414;
+            --border: rgba(198,168,124,0.15);
+            --border-hover: rgba(198,168,124,0.45);
+            --text: #f0ece4;
+            --text-muted: #888;
+            --gold-grad: linear-gradient(135deg, #bf953f 0%, #fcf6ba 40%, #b38728 70%, #aa771c 100%);
+            --transition-base: 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+            --soft-curve: cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        /* SAYFA GEÇİŞ */
+        #page-transition-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #0a0a0a; z-index: 99999; pointer-events: none;
+            opacity: 1; visibility: visible;
+            transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        body.is-loaded #page-transition-overlay { opacity: 0; visibility: hidden; }
+        main {
+            opacity: 0; transform: translateY(20px); filter: blur(5px);
+            transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s, filter 0.8s;
+        }
+        body.is-loaded main { opacity: 1; transform: translateY(0); filter: blur(0); }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--black); color: var(--text);
+            font-family: 'Manrope', sans-serif; font-weight: 300;
+            overflow-x: hidden; -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+        body::before {
+            content: ""; position: fixed; inset: 0;
+            background: linear-gradient(rgba(5,5,5,0.9), rgba(5,5,5,0.95)),
+                        url('https://ceraseramiktozuu.web.app/cera/foto15.jpg') center/cover no-repeat;
+            z-index: -2;
+        }
+        body::after {
+            content: ""; position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            z-index: -1; pointer-events: none; opacity: 0.6;
+        }
+        .gold-text {
+            background: var(--gold-grad);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 0 5%; height: 72px;
+            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+            background: rgba(5,5,5,0.82); backdrop-filter: blur(20px) saturate(1.5);
+            border-bottom: 1px solid var(--border); transition: background var(--transition-base);
+        }
+        nav.scrolled { background: rgba(5,5,5,0.97); }
+        .brand-logo-img { height: 52px; width: auto; display: block; }
+        .nav-back-btn {
+            display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px;
+            font-size: 0.72rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+            text-decoration: none; color: var(--gold); border: 1px solid var(--border);
+            background: transparent; position: relative; overflow: hidden;
+            transition: color 0.5s var(--soft-curve), border-color 0.5s var(--soft-curve), box-shadow 0.5s var(--soft-curve);
+        }
+        .nav-back-btn::before {
+            content: ""; position: absolute; inset: 0; background: var(--gold-grad);
+            transform: translateX(-100%); transition: transform 0.5s var(--soft-curve); z-index: -1;
+        }
+        .nav-back-btn:hover { color: var(--black); border-color: var(--gold); box-shadow: 0 0 24px rgba(198,168,124,0.25); }
+        .nav-back-btn:hover::before { transform: translateX(0); }
+        .nav-back-btn i { transition: transform 0.4s var(--soft-curve); }
+        .nav-back-btn:hover i { transform: translateX(-4px); }
+
+        /* SAYFA */
+        main {
+            padding: 140px 6% 100px;
+        }
+
+        /* BAŞLIK */
+        .page-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 300; line-height: 1;
+            margin-bottom: 72px;
+            letter-spacing: -1px;
+        }
+
+        /* GRID */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        /* KART */
+        .card {
+            position: relative;
+            background: rgba(255,255,255,0.018);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            /* köşe braketleri */
+            --bsize: 40px;
+            transition: border-color 0.5s var(--soft-curve), box-shadow 0.5s var(--soft-curve);
+            will-change: transform;
+        }
+        .card::before, .card::after {
+            content: ""; position: absolute;
+            width: var(--bsize); height: var(--bsize);
+            border-color: var(--gold); border-style: solid; opacity: 0;
+            transition: opacity 0.4s var(--soft-curve);
+            z-index: 3; pointer-events: none;
+        }
+        .card::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+        .card::after  { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
+        .card:hover { border-color: var(--border-hover); box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+        .card:hover::before, .card:hover::after { opacity: 1; }
+
+        /* Fotoğraf */
+        .card-img {
+            width: 100%; aspect-ratio: 4/3; overflow: hidden;
+            position: relative;
+        }
+        .card-img img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+            filter: grayscale(15%) brightness(0.65);
+            transition: filter 0.7s var(--soft-curve), transform 0.9s var(--soft-curve);
+        }
+        .card:hover .card-img img {
+            filter: grayscale(0%) brightness(0.8);
+            transform: scale(1.04);
+        }
+        .card-img-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(5,5,5,0.7) 0%, transparent 55%);
+        }
+
+        /* Kart içerik */
+        .card-body {
+            padding: 28px 30px 32px;
+            position: relative;
+        }
+        .card-num {
+            font-size: 0.55rem; letter-spacing: 4px; text-transform: uppercase;
+            color: var(--gold-dark); display: block; margin-bottom: 12px;
+        }
+        .card-line {
+            width: 0; height: 1px; background: var(--gold-grad);
+            margin-bottom: 14px;
+            transition: width 0.5s var(--soft-curve);
+        }
+        .card:hover .card-line { width: 32px; }
+
+        .card-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem; font-weight: 400; line-height: 1.2;
+            color: var(--gold-light); margin-bottom: 12px;
+        }
+        .card-desc {
+            font-size: 0.8rem; line-height: 1.8; color: var(--text-muted);
+        }
+        .card-tag {
+            position: absolute; top: 20px; right: 20px;
+            font-size: 0.5rem; letter-spacing: 2px; text-transform: uppercase;
+            padding: 5px 10px; border: 1px solid var(--border);
+            background: rgba(5,5,5,0.7); backdrop-filter: blur(10px);
+            color: rgba(198,168,124,0.5);
+            transition: border-color 0.3s, color 0.3s;
+        }
+        .card:hover .card-tag { border-color: var(--gold); color: var(--gold); }
+
+        /* FOOTER */
+        .info-footer { padding: 80px 5% 60px; background: var(--surface); border-top: 1px solid var(--border); margin-top: 100px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; }
+        .footer-box { flex: 1; min-width: 220px; }
+        .footer-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+        .footer-link { color: var(--text-muted); text-decoration: none; display: block; margin-bottom: 14px; font-size: 0.88rem; transition: color 0.3s, padding-left 0.3s; }
+        .footer-link:hover { color: var(--gold); padding-left: 6px; }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; color: var(--text-muted); font-size: 0.88rem; }
+        .footer-contact-item i { color: var(--gold); width: 16px; margin-top: 2px; }
+        .footer-contact-item a { color: inherit; text-decoration: none; }
+        .footer-contact-item a:hover { color: var(--gold); }
+        .social-icons { display: flex; gap: 30px; margin-top: 20px; }
+        .social-icons a { color: var(--gold); font-size: 1.8rem; transition: 0.4s; text-decoration: none; }
+        .social-icons a:hover { opacity: 0.7; transform: translateY(-3px); }
+        .footer-bottom { max-width: 1200px; margin: 50px auto 0; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--text-muted); }
+
+        .wa-float { position: fixed; bottom: 28px; right: 28px; background: #25D366; color: #fff; padding: 13px 22px; border-radius: 40px; text-decoration: none; z-index: 9999; display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.88rem; box-shadow: 0 6px 24px rgba(37,211,102,0.35); transition: transform 0.3s, box-shadow 0.3s; }
+        .wa-float:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(37,211,102,0.45); }
+
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .d1 { transition-delay: 0.08s; } .d2 { transition-delay: 0.16s; }
+        .d3 { transition-delay: 0.24s; } .d4 { transition-delay: 0.32s; }
+        .d5 { transition-delay: 0.4s;  } .d6 { transition-delay: 0.48s; }
+
+        @media (max-width: 960px) { .cards-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) {
+            .cards-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="page-transition-overlay" aria-hidden="true"></div>
+
+<nav id="mainNav">
+    <a href="index.html">
+        <img src="cera/logo3.png" alt="Cera Seramik Tozu" class="brand-logo-img" width="52" height="52">
+    </a>
+    <a href="index.html" class="nav-back-btn">
+        <i class="fas fa-arrow-left"></i> Ana Sayfaya Dön
+    </a>
+</nav>
+
+<main id="main-content">
+
+    <h1 class="page-title gold-text">Ürünlerimiz</h1>
+
+    <div class="cards-grid">
+
+        <div class="card reveal d1" data-tilt>
+            <div class="card-img">
+                <img src="https://ceraseramiktozuu.web.app/cera/urun1.jpg" alt="Cera Seramik Tozu" loading="lazy">
+                <div class="card-img-overlay"></div>
+            </div>
+            <div class="card-body">
+                <span class="card-tag">Döküm Tozu</span>
+                <span class="card-num">01 / 02</span>
+                <div class="card-line"></div>
+                <h2 class="card-name">Cera A Plus</h2>
+                <p class="card-desc">Özel formülü ile profesyonel imalatlar için geliştirilmiş, mermer sertliğinde ve yüksek mukavemetli kompozit formül.</p>
+            </div>
+        </div>
+
+        <div class="card reveal d2" data-tilt>
+            <div class="card-img">
+                <img src="https://ceraseramiktozuu.web.app/cera/urun2.jpg" alt="Sıfır Zımpara" loading="lazy">
+                <div class="card-img-overlay"></div>
+            </div>
+            <div class="card-body">
+                <span class="card-tag">Döküm Tozu</span>
+                <span class="card-num">02 / 02</span>
+                <div class="card-line"></div>
+                <h2 class="card-name">Cera Seramik</h2>
+                <p class="card-desc">Hobi ve dekoratif dökümler için ideal, pürüzsüz yüzeyli ekonomik çözüm.</p>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer class="info-footer">
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3 class="gold-text">Hızlı Menü</h3>
+            <a href="index.html" class="footer-link">Anasayfa</a>
+            <a href="biz-kimiz.html" class="footer-link">Biz Kimiz?</a>
+            <a href="nasıl-kullanilir.html" class="footer-link">Nasıl Kullanılır?</a>
+            <a href="sss.html" class="footer-link">Sıkça Sorulan Sorular</a>
+        </div>
+        <div class="footer-box">
+            <h3 class="gold-text">İletişim</h3>
+            <div class="footer-contact-item"><i class="fas fa-phone"></i><span>0530 310 73 20</span></div>
+            <div class="footer-contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:ceraseramiktozu@gmail.com">ceraseramiktozu@gmail.com</a></span></div>
+            <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>İzmir, Türkiye</span></div>
+        </div>
+        <div class="footer-box">
+            <h3 class="gold-text">Sosyal Medya</h3>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:20px;line-height:1.6;">Güncel çalışmalar için bizi takip edin.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/seramiktozu/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100066599107208" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2025 Cera Seramik Tozu. Tüm hakları saklıdır.</span>
+        <span>İzmir, Türkiye</span>
+    </div>
+</footer>
+
+<a href="https://wa.me/905303107320?text=Merhaba%20Cera%20Seramik%20Tozu%20sat%C4%B1n%20almak%20istiyorum." class="wa-float" target="_blank">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+</a>
+
+<script>
+(function () {
+    if (history.scrollRestoration) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+
+    /* NAV SCROLL */
+    var nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', function () {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* SAYFA GEÇİŞ */
+    window.addEventListener('load', function () {
+        setTimeout(function () { document.body.classList.add('is-loaded'); }, 100);
+    });
+    document.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            var href = this.getAttribute('href');
+            var target = this.getAttribute('target');
+            if (href && !href.startsWith('#') && !href.startsWith('tel') && !href.startsWith('mailto') && target !== '_blank') {
+                e.preventDefault();
+                document.body.classList.remove('is-loaded');
+                setTimeout(function () { window.location.href = href; }, 700);
+            }
+        });
+    });
+    window.addEventListener('pageshow', function (e) {
+        if (e.persisted) document.body.classList.add('is-loaded');
+    });
+
+    /* SCROLL REVEAL */
+    var revEls = document.querySelectorAll('.reveal');
+    var revObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revObs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08 });
+    revEls.forEach(function (el) { revObs.observe(el); });
+
+    /* 3D TILT — mouse pozisyonuna göre kart eğilmesi */
+    var cards = document.querySelectorAll('[data-tilt]');
+
+    cards.forEach(function (card) {
+        var bounds;
+
+        function getCenter(e) {
+            var x = e.clientX - bounds.left;
+            var y = e.clientY - bounds.top;
+            var cx = bounds.width  / 2;
+            var cy = bounds.height / 2;
+            return {
+                rx: ((y - cy) / cy) * -10,   /* dikey tilt */
+                ry: ((x - cx) / cx) *  10,   /* yatay tilt */
+                dx: ((x - cx) / cx) *  8,    /* gölge x */
+                dy: ((y - cy) / cy) *  8     /* gölge y */
+            };
+        }
+
+        card.addEventListener('mouseenter', function () {
+            bounds = card.getBoundingClientRect();
+            card.style.transition = 'transform 0.1s ease, box-shadow 0.1s ease, border-color 0.5s, background 0.4s';
+        });
+
+        card.addEventListener('mousemove', function (e) {
+            var v = getCenter(e);
+            card.style.transform =
+                'perspective(900px) rotateX(' + v.rx + 'deg) rotateY(' + v.ry + 'deg) scale3d(1.025, 1.025, 1.025)';
+            card.style.boxShadow =
+                v.dx + 'px ' + v.dy + 'px 40px rgba(0,0,0,0.55), ' +
+                '0 0 30px rgba(198,168,124,0.08)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+            card.style.transition = 'transform 0.7s cubic-bezier(0.22,1,0.36,1), box-shadow 0.7s, border-color 0.5s, background 0.4s';
+            card.style.transform  = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            card.style.boxShadow  = '';
+        });
+    });
+
+})();
+</script>
+</body>
+</html>
